@@ -16,7 +16,7 @@ public class App extends Application {
         );
 
         Scene scene = new Scene(loader.load(), 600, 700);
-
+      //  stage.setFullScreen(true);
         stage.setTitle("Shadowhunters");
         stage.setScene(scene);
         stage.show();

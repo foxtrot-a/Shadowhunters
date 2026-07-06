@@ -22,11 +22,9 @@ public class GuideController {
             Parent root = FXMLLoader.load(getClass().getResource("/view/room-view.fxml"));
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            double w = stage.getScene().getWidth();
-            double h = stage.getScene().getHeight();
-
             stage.setScene(new Scene(root));
+            stage.setFullScreen(true);
+
             stage.show();
 
         } catch (Exception e) {

@@ -1,65 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="it.unicam.cs.mpgc.rpg122641.Controllers.GuideController"
-            style="-fx-background-color: black;">
+<BorderPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.mpgc.rpg122641.Controllers.GuideController">
 
     <!-- Titolo -->
     <top>
-        <Label text="GUIDA DEL GIOCO"
-               style="-fx-text-fill: white; -fx-font-size: 28; -fx-padding: 15;"
-               BorderPane.alignment="CENTER"/>
+        <Label style="-fx-text-fill: white; -fx-font-size: 28; -fx-padding: 15;" text="GUIDA DEL GIOCO" BorderPane.alignment="CENTER" />
     </top>
 
     <!-- Guida -->
     <center>
-        <TextArea editable="false"
-                  wrapText="true"
-                  style="-fx-font-size: 14;
-                 -fx-control-inner-background: #1e1e1e;
-                 -fx-text-fill: white;">
-            <text><![CDATA[
-Benvenuto nel gioco!
-
-OBIETTIVO:
-Sconfiggi i nemici e completa l'avventura.
-
-COMANDI:
-• Attacca: infligge danno.
-• Difendi: riduce il danno ricevuto.
-• Magia: utilizza il mana per lanciare incantesimi.
-
-INVENTARIO:
-• Usa gli oggetti raccolti durante il viaggio.
-• Cura il personaggio.
-• Ottieni vantaggi.
-
-BUONA FORTUNA!
-    ]]></text>
-        </TextArea>
+        <TextArea editable="false" style="-fx-font-size: 14;                  -fx-control-inner-background: #1e1e1e;                  -fx-text-fill: white;" text="Tutte le storie sono vere! Così recita il motto degli Shadowhunters.&#10;Questo gioco è ispirato a questo mondo.&#10;Una volta chiusa la guida, ti troverai in una schermata con sette immagini di luoghi degli Shadowhunters. Ogni luogo ti porterà più vicino o più lontano alla vittoria.&#10;In ogni luogo dove andrai ci saranno dei demoni comuni, il tuo obbiettivo è uccidere il demone, recuperare gli Strumenti Mortali, evocare Raziel e sconfiggere un Demone Superiore. Si hai capito bene, un Demone Superiore. &#10;Solo raziel è la tua salvezza, perchè se dovessi incontrare un Demone Superiore, prima di evocare Raziel, non esisterai più!&#10;Hai a disposizione tre mosse che potrai fare una volta entrato in un luogo.&#10;- Attaccare per primo&#10;- Difenderti&#10;- Scappare &#10;Ogni mossa comporterà aggiunta o sottrazione del punteggio, che puoi vedere in alto a sinistra. &#10;&#10;Troverai comunque dei suggerimenti o altre spiegazioni in fondo alla schermata che si serviranno finch non diventerai un bravo Cacciatore.&#10;Ricorda ogni luogo ha un significato...più o meno, quindi stai attento!&#10;&#10;" wrapText="true">
+                  </TextArea>
     </center>
 
     <!-- Pulsanti -->
     <bottom>
-        <HBox alignment="CENTER"
-              spacing="20"
-              style="-fx-padding: 15; -fx-background-color: #222222;">
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 15; -fx-background-color: #222222;">
 
 
 
-            <Button text="Inizia l'avventura"
-                    prefWidth="180"
-                    onAction="#goToGame"
-                    style="
-                        -fx-background-color: #4CAF50;
-                        -fx-text-fill: white;
-                        -fx-font-size: 16;
-                        -fx-background-radius: 8;
-                    "/>
+            <Button onAction="#goToGame" prefWidth="180" style="                         -fx-background-color: #4CAF50;                         -fx-text-fill: white;                         -fx-font-size: 16;                         -fx-background-radius: 8;                     " text="Inizia l'avventura" />
 
         </HBox>
     </bottom>

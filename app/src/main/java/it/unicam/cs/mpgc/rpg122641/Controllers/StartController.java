@@ -21,10 +21,8 @@ public class StartController {
 
             // cambia scena
 
-            double w = stage.getScene().getWidth();
-            double h = stage.getScene().getHeight();
-
-            stage.setScene(new Scene(root, w, h));
+            stage.setScene(new Scene(root));
+         //   stage.setFullScreen(true);
             stage.show();
 
         } catch (Exception e) {
