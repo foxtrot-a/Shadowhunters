@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unicam.cs.mpgc.rpg122641.Controllers.RoomController"
+            style="-fx-background-color: #1b1b1b;">
+
+    <top>
+        <Label text="DOVE VUOI ANDARE?"
+               BorderPane.alignment="CENTER"
+               style="-fx-font-size: 28px;
+                      -fx-text-fill: white;
+                      -fx-padding: 20;"/>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="20" bottom="20" left="20" right="20"/>
+            </padding>
+
+            <!-- Prima riga -->
+            <HBox alignment="CENTER" spacing="20">
+
+                <StackPane prefWidth="160" prefHeight="160"
+                           style="-fx-border-color: white;
+                                  -fx-border-width: 2;
+                                  -fx-background-color: #3b3b3b;"
+                           onMouseClicked="#scenario1">
+                    <ImageView fx:id="img1"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="false"/>
+                </StackPane>
+
+                <StackPane prefWidth="160" prefHeight="160"
+                           style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
+                           onMouseClicked="#scenario2">
+                    <ImageView fx:id="img2"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="false"/>
+                </StackPane>
+
+                <StackPane prefWidth="160" prefHeight="160"
+                           style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
+                           onMouseClicked="#scenario3">
+                    <ImageView fx:id="img3"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="false"/>
+                </StackPane>
+
+                <StackPane prefWidth="160" prefHeight="160"
+                           style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
+                           onMouseClicked="#scenario4">
+                    <ImageView fx:id="img4"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="false"/>
+                </StackPane>
+
+            </HBox>
+
+            <!-- Seconda riga -->
+            <HBox alignment="CENTER" spacing="20">
+
+                <StackPane prefWidth="160" prefHeight="160"
+                           style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
+                           onMouseClicked="#scenario5">
+                    <ImageView fx:id="img5"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="false"/>
+                </StackPane>
+
+                <StackPane prefWidth="160" prefHeight="160"
+                           style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
+                           onMouseClicked="#scenario6">
+                    <ImageView fx:id="img6"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="false"/>
+                </StackPane>
+
+                <StackPane prefWidth="160" prefHeight="160"
+                           style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
+                           onMouseClicked="#scenario7">
+                    <ImageView fx:id="img7"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="false"/>
+                </StackPane>
+
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
