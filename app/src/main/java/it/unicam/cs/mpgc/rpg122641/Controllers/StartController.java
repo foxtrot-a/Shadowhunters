@@ -1,5 +1,5 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
-
+import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,20 +9,27 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 
 public class StartController {
+private Game game;
+
+    public void setGame (Game game){
+        this.game = game;
+    }
 
     @FXML
     private void goToGame(ActionEvent event) {
-        try {
-            // carica seconda pagina
-            Parent root = FXMLLoader.load(getClass().getResource("/view/guida-view.fxml"));
 
-            // prende lo stage attuale
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/guida-view.fxml"));
+
+            Parent root = loader.load();
+
+            GuideController controller = loader.getController();
+            controller.setGame(game);
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // cambia scena
-
             stage.setScene(new Scene(root));
-         //   stage.setFullScreen(true);
             stage.show();
 
         } catch (Exception e) {

@@ -8,5 +8,7 @@ public class GameController {
     @FXML
     private void evocaRaziel(ActionEvent event) {
         System.out.println("Stai evocando raziel");
+
+
     }
 }
