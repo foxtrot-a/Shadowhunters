@@ -1,7 +1,9 @@
 package it.unicam.cs.mpgc.rpg122641;
 
 import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
+import it.unicam.cs.mpgc.rpg122641.Models.Daemon;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
+import it.unicam.cs.mpgc.rpg122641.Models.Object;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import it.unicam.cs.mpgc.rpg122641.Models.Shadowhunters;
 import javafx.application.Application;
@@ -19,7 +21,10 @@ public class App extends Application {
 
         Shadowhunters shadowhunters = new Shadowhunters();
         ArrayList<Room> rooms = new ArrayList<Room>();
-
+        Daemon demone = new Daemon();
+        Object object = new Object();
+        Room stanza1 = new Room(1, "Lago", demone,  object, "qui metto la storia narrativa");
+        rooms.add(stanza1);
         Game game = new Game( shadowhunters, rooms);
 
 

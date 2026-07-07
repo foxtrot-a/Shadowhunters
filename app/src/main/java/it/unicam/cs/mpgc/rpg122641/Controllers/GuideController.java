@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
 
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
+import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +25,15 @@ public class GuideController {
     @FXML
     private void goToGame(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/room-view.fxml"));
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/room-view.fxml"));
+
+            Parent root = loader.load();
+
+            RoomController controller = loader.getController();
+            controller.setGame(game);
+
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

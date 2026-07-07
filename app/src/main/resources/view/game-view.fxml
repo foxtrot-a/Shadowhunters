@@ -40,7 +40,7 @@
                 <Label layoutX="20" layoutY="20" style="-fx-text-fill: white; -fx-font-size: 18;" text="Qui inserisco la figura del mostro " />
             </AnchorPane>
 
-            <TextArea editable="false" prefHeight="82.0" prefWidth="425.0" style="-fx-font-family: monospace;" text="Qui scrivo i suggerimenti o altro" wrapText="true" />
+            <TextArea fx:id="pp" editable="false" prefHeight="82.0" prefWidth="425.0" style="-fx-font-family: monospace;" text="Qui scrivo i suggerimenti o altro" wrapText="true" />
         </SplitPane>
     </center>
 

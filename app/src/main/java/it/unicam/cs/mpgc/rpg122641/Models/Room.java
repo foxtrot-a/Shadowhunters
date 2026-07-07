@@ -5,7 +5,7 @@ public class Room {
     private String name; // nome del luogo
     private Daemon daemon; // demone presente nella stanza
     private Object object; // oggetto magico che si recupera nella stanza se si uccide il demone
-    private  String text;
+    private  String text; // testo per la storia narrativa
 
     public Room(int id, String name, Daemon daemon, Object object, String text) {
         this.id = id;

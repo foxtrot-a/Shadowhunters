@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
+import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
