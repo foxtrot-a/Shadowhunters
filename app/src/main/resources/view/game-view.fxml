@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unicam.cs.mpgc.rpg122641.Controllers.GameController">
+
+
+    <top>
+        <HBox spacing="20" style="-fx-background-color: #2b2b2b; -fx-padding: 10;">
+
+            <Label style="-fx-text-fill: white;" text="Attacco" />
+
+            <ProgressBar progress="1.0" />
+
+            <Label style="-fx-text-fill: white;" text="Difesa" />
+
+            <ProgressBar progress="1.0" />
+
+            <Label style="-fx-text-fill: white;" text="Vita Totale" />
+
+            <ProgressBar progress="1.0" />
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="510.0" prefWidth="426.0">
+
+            <AnchorPane prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #1a1a1a;">
+                <Label style="-fx-text-fill: white; -fx-font-size: 18;" text="qui inserisco la figura dell'oggetto magico che si vince" />
+                <Label layoutX="20" layoutY="20" style="-fx-text-fill: white; -fx-font-size: 18;" text="Qui inserisco la figura del mostro " />
+            </AnchorPane>
+
+            <TextArea editable="false" prefHeight="82.0" prefWidth="425.0" style="-fx-font-family: monospace;" text="Qui scrivo i suggerimenti o altro" wrapText="true" />
+        </SplitPane>
+    </center>
+
+    <bottom>
+
+
+        <VBox spacing="10" style="-fx-background-color: #2b2b2b; -fx-padding: 10;">
+
+
+            <HBox spacing="10">
+                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+            </HBox>
+
+
+            <HBox spacing="10">
+                <Button text="Attacca"  />
+                <Button text="Difendi" />
+                <Button text="Fuggi" />
+                <Button text="Evoca Raziel" onAction="#evocaRaziel"/>
+            </HBox>
+
+        </VBox>
+
+    </bottom>
+
+</BorderPane>
