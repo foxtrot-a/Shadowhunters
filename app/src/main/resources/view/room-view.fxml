@@ -28,11 +28,11 @@
             <!-- Prima riga -->
             <HBox alignment="CENTER" spacing="20">
 
-                <StackPane prefWidth="160" prefHeight="160"
+                <StackPane fx:id="1" prefWidth="160" prefHeight="160"
                            style="-fx-border-color: white;
                                   -fx-border-width: 2;
                                   -fx-background-color: #3b3b3b;"
-                           onMouseClicked="#scenario1">
+                           onMouseClicked="#scenario">
 
 
                     <ImageView fx:id="img1"
@@ -53,9 +53,9 @@
 
                </StackPane>
 
-                <StackPane prefWidth="160" prefHeight="160"
+                <StackPane fx:id="2" prefWidth="160" prefHeight="160"
                            style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
-                           onMouseClicked="#scenario2">
+                           onMouseClicked="#scenario">
 
                     <ImageView fx:id="img2"
                                fitWidth="150"
@@ -75,9 +75,9 @@
               -fx-padding: 4;"/>
                 </StackPane>
 
-                <StackPane prefWidth="160" prefHeight="160"
+                <StackPane fx:id="3" prefWidth="160" prefHeight="160"
                            style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
-                           onMouseClicked="#scenario3">
+                           onMouseClicked="#scenario">
                     <ImageView fx:id="img3"
                                fitWidth="150"
                                fitHeight="150"
@@ -96,9 +96,9 @@
               -fx-padding: 4;"/>
                 </StackPane>
 
-                <StackPane prefWidth="160" prefHeight="160"
+                <StackPane fx:id="4" prefWidth="160" prefHeight="160"
                            style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
-                           onMouseClicked="#scenario4">
+                           onMouseClicked="#scenario">
                     <ImageView fx:id="img4"
                                fitWidth="150"
                                fitHeight="150"
@@ -122,9 +122,9 @@
 
             <HBox alignment="CENTER" spacing="20">
 
-                <StackPane prefWidth="160" prefHeight="160"
+                <StackPane fx:id="5" prefWidth="160" prefHeight="160"
                            style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
-                           onMouseClicked="#scenario5">
+                           onMouseClicked="#scenario">
                     <ImageView fx:id="img5"
                                fitWidth="150"
                                fitHeight="150"
@@ -142,9 +142,9 @@
               -fx-padding: 4;"/>
                 </StackPane>
 
-                <StackPane prefWidth="160" prefHeight="160"
+                <StackPane fx:id="6" prefWidth="160" prefHeight="160"
                            style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
-                           onMouseClicked="#scenario6">
+                           onMouseClicked="#scenario">
                     <ImageView fx:id="img6"
                                fitWidth="150"
                                fitHeight="150"
@@ -162,9 +162,9 @@
               -fx-padding: 4;"/>
                 </StackPane>
 
-                <StackPane prefWidth="160" prefHeight="160"
+                <StackPane fx:id="7" prefWidth="160" prefHeight="160"
                            style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: #3b3b3b;"
-                           onMouseClicked="#scenario7">
+                           onMouseClicked="#scenario">
                     <ImageView fx:id="img7"
                                fitWidth="150"
                                fitHeight="150"

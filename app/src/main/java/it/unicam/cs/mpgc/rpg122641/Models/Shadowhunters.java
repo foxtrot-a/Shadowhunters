@@ -5,8 +5,13 @@ public String nome;
 
 private int vita;
 
-public Shadowhunters(){
-    this.nome = "prova";
+public Shadowhunters(int attacco, int difesa){
+
+    super(attacco,difesa);
+
+
+
+
 }
 
 

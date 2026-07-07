@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,78 +38,68 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
         // inseriremo anche le immagini e altro che mi serve
     }
 
-    @FXML
-    private void evocaRaziel(ActionEvent event) {
-
-   if (this.game.isEvocaRaziel() == true){
-
-    //mostro immagine di raziel e poi aggiuntgo vita e torno indietro
-        }else{
-       // tolgo vita    //todo
-   }
-    }
-
-
-    @FXML
-    private void fuggi (ActionEvent event) throws IOException {
-
-        // nel fuggi torniamo alla schermata delle scelte, ma togliamo punteggio
-        this.back(event);
-
-    }
-
-
-    @FXML
-    private void attacca (ActionEvent event) throws IOException {
-//todo
-        // nel fuggi torniamo alla schermata delle scelte, ma togliamo punteggio
-
-        // qui faccio mio attacco - sua difesa
-
-        int danno = this.game.getShadowhunters().getAttacco() - this.game.getRooms().get(scenario-1).getDaemon().getDifesa();
-        if (danno > 0){
-            // ho vinto io
-            // inserisco l'immagine dell'oggetto
-
-            Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
-            img1.setImage(image);
-
-            // aumento il mio attacco del valore del danno
-            //mostro hai vinto e trono indietro alle scelte
-        }else{
-
-        }
-
-
-
-
-     //   this.back(event);
-
-    }
-
-
-    @FXML
-    private void difendi (ActionEvent event) throws IOException {
-        // qui faccio mia difesa - suo attacco
-
-        // nel fuggi torniamo alla schermata delle scelte, ma togliamo punteggio
-        this.back(event);
-
-    }
-
    public  void setScenario(int i) {
         this.scenario = i;
     }
 
-    // in questo metodo, raggruppiamo l'aggiornamento del risultato, dopo che
-    // il giocatore ha fatto la sua mossa
-    private void danno(){
+
+    // il giocatore può effettuare una scelta, quindi una mossa
+    @FXML
+    private void mossa(ActionEvent event) throws IOException {
+        Button button = (Button) event.getSource();
+        System.out.println(button.getId());
+        switch (button.getId()) {
+            case "1": // attacca
+
+                 int esito = this.game.assegnaEsito(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa());
+
+                System.out.println(esito);
+                 if (esito > 0){
 
 
+            Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
+            img1.setImage(image);
+
+}else{
+    //todo
+    //togliamo l'esito
+}
+
+
+                break;
+
+            case "2": //difendi
+
+               esito = this.game.assegnaEsito(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco());
+                if (esito > 0){
+                    Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
+                    img1.setImage(image);
+
+                }else{
+                    //todo
+                    //togliamo l'esito
+                }
+
+
+                break;
+
+            case "3": //fuggi
+
+                //this.game.
+                this.back(event);
+                break;
+
+            case "4": //evocare Angelo
+
+                //this.game.
+                this.back(event);
+                break;
+
+        }
 
     }
 
-
+//metodo per tornare indietro, riutulizzabile in più punti
     private void back(ActionEvent event) throws IOException{
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/room-view.fxml"));

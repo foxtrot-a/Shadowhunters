@@ -1,5 +1,7 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 
 public class Game {
@@ -33,5 +35,12 @@ public class Game {
     }
     public void setCall_room(int call_room) {
         this.call_room = call_room;
+    }
+
+    public int assegnaEsito(int var1, int var2){
+
+        int danno = var1-var2;
+        return danno;
+
     }
 }

@@ -4,6 +4,12 @@ public abstract  class Personaggio {
     private int attacco;
     private int difesa;
 
+    public Personaggio(int attacco, int difesa) {
+
+        this.attacco = attacco;
+        this.difesa = difesa;
+    }
+
 
     public int getAttacco() {
         return attacco;
@@ -12,4 +18,5 @@ public abstract  class Personaggio {
     public int getDifesa() {
         return difesa;
     }
-}
+
+    }
