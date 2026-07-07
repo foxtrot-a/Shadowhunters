@@ -129,7 +129,6 @@
                 <Button fx:id="1" text="Attacca" onAction="#mossa"/>
                 <Button fx:id="2" text="Difendi" onAction="#mossa"/>
                 <Button fx:id="3" text="Fuggi" onAction="#mossa"/>
-                <Button fx:id="4" text="Evoca Raziel" onAction="#mossa"/>
             </HBox>
 
         </VBox>

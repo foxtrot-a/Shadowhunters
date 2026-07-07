@@ -9,6 +9,10 @@ public class Room {
     private String immagine;
     private boolean done;
 
+    public String getImmagine() {
+        return immagine;
+    }
+
     public Room(int id, String name, Daemon daemon, Object object, String text, String immagine) {
         this.id = id;
         this.name = name;
@@ -37,5 +41,13 @@ public class Room {
 
     public String getText() {
         return text;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }

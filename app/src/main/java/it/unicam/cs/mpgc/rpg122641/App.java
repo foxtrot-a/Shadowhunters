@@ -31,7 +31,47 @@ public class App extends Application {
                 "Raziel.png");
 
 
+
+        Room stanza2 = new Room(2, "Lago", demone,  object,
+                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
+                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
+                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+                "Raziel.png");
+          Room stanza3 = new Room(2, "Lago", demone,  object,
+                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
+                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
+                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+                "Raziel.png");
+        Room stanza4 = new Room(2, "Lago", demone,  object,
+                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
+                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
+                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+                "Raziel.png");
+        Room stanza5 = new Room(2, "Lago", demone,  object,
+                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
+                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
+                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+                "Raziel.png");
+        Room stanza6 = new Room(2, "Lago", demone,  object,
+                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
+                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
+                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+                "Raziel.png");
+        Room stanza7 = new Room(2, "Lago", demone,  object,
+                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
+                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
+                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+                "Raziel.png");
+
+
+
         rooms.add(stanza1);
+        rooms.add(stanza2);
+        rooms.add(stanza3);
+        rooms.add(stanza4);
+        rooms.add(stanza5);
+        rooms.add(stanza6);
+        rooms.add(stanza7);
         Game game = new Game( shadowhunters, rooms);
 
 

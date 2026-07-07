@@ -26,6 +26,18 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     TextArea pp;
     @FXML
     private ImageView img1;
+    @FXML
+    private ImageView img2;
+    @FXML
+    private ImageView img3;
+    @FXML
+    private ImageView img4;
+    @FXML
+    private ImageView img5;
+    @FXML
+    private ImageView img6;
+    @FXML
+    private ImageView img7;
 
 
 
@@ -35,7 +47,16 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
         this.game = game;
         Room room = game.getRooms().get(scenario-1);
         pp.setText(room.getText());     // inseriamo il testo nella parte bianca
-        // inseriremo anche le immagini e altro che mi serve
+
+        for(int i = 0; i < this.game.getRooms().size(); i++){
+            if (this.game.getRooms().get(i).isDone() == true){
+                // recuperiamo l'immagine dell'oggetto dal game
+                String immagine = "/images/" + this.game.getRooms().get(i).getImmagine();
+//System.out.println(immagine);
+                Image image = new Image(getClass().getResourceAsStream(immagine));
+                setImmagineOggetti(image);
+              }
+        }
     }
 
    public  void setScenario(int i) {
@@ -48,55 +69,51 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     private void mossa(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
         System.out.println(button.getId());
+
+        int esito = 0;
         switch (button.getId()) {
             case "1": // attacca
-
-                 int esito = this.game.assegnaEsito(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa());
-
-                System.out.println(esito);
-                 if (esito > 0){
-
-
-            Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
-            img1.setImage(image);
-
-}else{
-    //todo
-    //togliamo l'esito
-}
-
-
+                esito = this.game.assegnaEsito(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa());
                 break;
-
             case "2": //difendi
-
-               esito = this.game.assegnaEsito(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco());
-                if (esito > 0){
-                    Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
-                    img1.setImage(image);
-
-                }else{
-                    //todo
-                    //togliamo l'esito
-                }
-
-
+                esito = this.game.assegnaEsito(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco());
                 break;
-
             case "3": //fuggi
-
-                //this.game.
                 this.back(event);
                 break;
-
-            case "4": //evocare Angelo
-
-                //this.game.
-                this.back(event);
-                break;
-
         }
 
+        // settiamo le immagini degli oggetti
+        if (esito > 0){ // se abbiamo vinto, perchè abbiamo preso l'oggetto magico
+            Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
+            this.setImmagineOggetti(image);
+            this.game.getRooms().get(scenario-1).setDone(true);
+        }
+    }
+
+    private void setImmagineOggetti(Image image){
+
+        if (img1.getImage() == null){
+            img1.setImage(image);
+        } else
+        if(img2.getImage() == null){
+            img2.setImage(image);
+        } else
+        if (img3.getImage() == null){
+            img3.setImage(image);
+        } else
+        if (img4.getImage() == null){
+            img4.setImage(image);
+        } else
+        if (img5.getImage() == null){
+            img5.setImage(image);
+        } else
+        if (img6.getImage() == null){
+            img6.setImage(image);
+        } else
+        if (img7.getImage() == null){
+            img7.setImage(image);
+        }
     }
 
 //metodo per tornare indietro, riutulizzabile in più punti
