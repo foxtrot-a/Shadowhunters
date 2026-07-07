@@ -36,7 +36,7 @@ public class GuideController {
 
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(new Scene(root,800,700));
 
 
             stage.show();

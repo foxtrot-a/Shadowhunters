@@ -34,7 +34,7 @@ public class RoomController{
 
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root,600,700));
+            stage.setScene(new Scene(root,800,700));
 
             stage.show();
 

@@ -62,9 +62,9 @@
 
 
             <HBox spacing="10">
-                <Button text="Attacca"  />
-                <Button text="Difendi" />
-                <Button text="Fuggi" />
+                <Button text="Attacca"  onAction="#attacca"/>
+                <Button text="Difendi" onAction="#difendi"/>
+                <Button text="Fuggi" onAction="#fuggi"/>
                 <Button text="Evoca Raziel" onAction="#evocaRaziel"/>
             </HBox>
 
