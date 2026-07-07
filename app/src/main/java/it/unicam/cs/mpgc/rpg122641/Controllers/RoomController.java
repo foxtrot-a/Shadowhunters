@@ -29,12 +29,13 @@ public class RoomController{
             Parent root = loader.load();
 
             GameController controller = loader.getController();
-            controller.setGame(game);
             controller.setScenario(1);
+            controller.setGame(game);
+
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setFullScreen(true);
+            stage.setScene(new Scene(root,600,700));
+
             stage.show();
 
         } catch (Exception e) {

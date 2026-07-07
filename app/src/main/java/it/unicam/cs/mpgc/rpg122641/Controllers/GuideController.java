@@ -37,7 +37,7 @@ public class GuideController {
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setFullScreen(true);
+
 
             stage.show();
 

@@ -15,11 +15,12 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     @FXML
     TextArea pp;
     @FXML
-    public void setGame (Game game){ //quando passiamo l'oggetto gioo, settiamo anche le varie label
+    public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
                                     // che ci servono
         this.game = game;
         Room room = game.getRooms().get(scenario-1);
         pp.setText(room.getText());     // inseriamo il testo nella parte bianca
+        // inseriremo anche le immagini e altro che mi serve
     }
 
     @FXML
@@ -37,4 +38,11 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
         this.scenario = i;
     }
 
+    // in questo metodo, raggruppiamo l'aggiornamento del risultato, dopo che
+    // il giocatore ha fatto la sua mossa
+    private void danno(){
+
+
+
+    }
 }
