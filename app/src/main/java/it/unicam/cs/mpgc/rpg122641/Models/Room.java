@@ -6,13 +6,17 @@ public class Room {
     private Daemon daemon; // demone presente nella stanza
     private Object object; // oggetto magico che si recupera nella stanza se si uccide il demone
     private  String text; // testo per la storia narrativa
+    private String immagine;
+    private boolean done;
 
-    public Room(int id, String name, Daemon daemon, Object object, String text) {
+    public Room(int id, String name, Daemon daemon, Object object, String text, String immagine) {
         this.id = id;
         this.name = name;
         this.daemon = daemon;
         this.object = object;
         this.text = text;
+        this.immagine = immagine;
+        this.done = false; // mettiamo a false il fatto che la stanza è già stata superata
     }
 
     public int getId() {

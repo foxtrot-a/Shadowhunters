@@ -4,12 +4,13 @@ import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,6 +23,11 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
 // qui inseriamo il riferimento alla label o agli oggetti che ci servono del file FXML
     @FXML
     TextArea pp;
+    @FXML
+    private ImageView img1;
+
+
+
     @FXML
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
                                     // che ci servono
@@ -54,15 +60,36 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
 
     @FXML
     private void attacca (ActionEvent event) throws IOException {
-
+//todo
         // nel fuggi torniamo alla schermata delle scelte, ma togliamo punteggio
-        this.back(event);
+
+        // qui faccio mio attacco - sua difesa
+
+        int danno = this.game.getShadowhunters().getAttacco() - this.game.getRooms().get(scenario-1).getDaemon().getDifesa();
+        if (danno > 0){
+            // ho vinto io
+            // inserisco l'immagine dell'oggetto
+
+            Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
+            img1.setImage(image);
+
+            // aumento il mio attacco del valore del danno
+            //mostro hai vinto e trono indietro alle scelte
+        }else{
+
+        }
+
+
+
+
+     //   this.back(event);
 
     }
 
 
     @FXML
     private void difendi (ActionEvent event) throws IOException {
+        // qui faccio mia difesa - suo attacco
 
         // nel fuggi torniamo alla schermata delle scelte, ma togliamo punteggio
         this.back(event);

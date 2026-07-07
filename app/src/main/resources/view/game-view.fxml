@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="it.unicam.cs.mpgc.rpg122641.Controllers.GameController">
 
@@ -49,20 +51,82 @@
 
         <VBox spacing="10" style="-fx-background-color: #2b2b2b; -fx-padding: 10;">
 
+            <HBox spacing="10" alignment="CENTER">
 
-            <HBox spacing="10">
-                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
-                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
-                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
-                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
-                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
-                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
-                <Rectangle arcHeight="10" arcWidth="10" height="80" style="-fx-fill: lightgray; -fx-stroke: black;" width="60" />
+                <StackPane>
+                    <Rectangle fx:id="r1" width="60" height="80"
+                               arcWidth="10" arcHeight="10"
+                               fill="lightgray" stroke="black"/>
+                    <ImageView fx:id="img1"
+                               fitWidth="45"
+                               fitHeight="45"
+                               preserveRatio="true"/>
+                </StackPane>
+
+                <StackPane>
+                    <Rectangle width="60" height="80"
+                               arcWidth="10" arcHeight="10"
+                               fill="lightgray" stroke="black"/>
+                    <ImageView fx:id="img2"
+                               fitWidth="45"
+                               fitHeight="45"
+                               preserveRatio="true"/>
+                </StackPane>
+
+                <StackPane>
+                    <Rectangle width="60" height="80"
+                               arcWidth="10" arcHeight="10"
+                               fill="lightgray" stroke="black"/>
+                    <ImageView fx:id="img3"
+                               fitWidth="45"
+                               fitHeight="45"
+                               preserveRatio="true"/>
+                </StackPane>
+
+                <StackPane>
+                    <Rectangle width="60" height="80"
+                               arcWidth="10" arcHeight="10"
+                               fill="lightgray" stroke="black"/>
+                    <ImageView fx:id="img4"
+                               fitWidth="45"
+                               fitHeight="45"
+                               preserveRatio="true"/>
+                </StackPane>
+
+                <StackPane>
+                    <Rectangle width="60" height="80"
+                               arcWidth="10" arcHeight="10"
+                               fill="lightgray" stroke="black"/>
+                    <ImageView fx:id="img5"
+                               fitWidth="45"
+                               fitHeight="45"
+                               preserveRatio="true"/>
+                </StackPane>
+
+                <StackPane>
+                    <Rectangle width="60" height="80"
+                               arcWidth="10" arcHeight="10"
+                               fill="lightgray" stroke="black"/>
+                    <ImageView fx:id="img6"
+                               fitWidth="45"
+                               fitHeight="45"
+                               preserveRatio="true"/>
+                </StackPane>
+
+                <StackPane>
+                    <Rectangle width="60" height="80"
+                               arcWidth="10" arcHeight="10"
+                               fill="lightgray" stroke="black"/>
+                    <ImageView fx:id="img7"
+                               fitWidth="45"
+                               fitHeight="45"
+                               preserveRatio="true"/>
+                </StackPane>
+
             </HBox>
 
-
-            <HBox spacing="10">
-                <Button text="Attacca"  onAction="#attacca"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Attacca" onAction="#attacca"/>
                 <Button text="Difendi" onAction="#difendi"/>
                 <Button text="Fuggi" onAction="#fuggi"/>
                 <Button text="Evoca Raziel" onAction="#evocaRaziel"/>

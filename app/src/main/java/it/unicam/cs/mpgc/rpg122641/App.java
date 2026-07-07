@@ -26,7 +26,8 @@ public class App extends Application {
         Room stanza1 = new Room(1, "Lago", demone,  object,
                 "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
                 "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?");
+        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+                "Raziel.png");
 
 
         rooms.add(stanza1);

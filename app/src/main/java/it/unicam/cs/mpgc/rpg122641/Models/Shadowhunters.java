@@ -1,6 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
 
-public class Shadowhunters {
+public class Shadowhunters extends Personaggio{
 public String nome;
 
 private int vita;
