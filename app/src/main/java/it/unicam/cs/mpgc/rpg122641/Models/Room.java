@@ -1,17 +1,37 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
 
 public class Room {
-
     private int id; // identificativo della stanza
     private String name; // nome del luogo
     private Daemon daemon; // demone presente nella stanza
     private Object object; // oggetto magico che si recupera nella stanza se si uccide il demone
+    private  String text;
 
+    public Room(int id, String name, Daemon daemon, Object object, String text) {
+        this.id = id;
+        this.name = name;
+        this.daemon = daemon;
+        this.object = object;
+        this.text = text;
+    }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public Daemon getDaemon() {
+        return daemon;
+    }
 
+    public Object getObject() {
+        return object;
+    }
 
-
-
+    public String getText() {
+        return text;
+    }
 }
