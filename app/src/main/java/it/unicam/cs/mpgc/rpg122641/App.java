@@ -21,7 +21,7 @@ public class App extends Application {
 
         Shadowhunters shadowhunters = new Shadowhunters(10,8);
         ArrayList<Room> rooms = new ArrayList<Room>();
-        Daemon demone = new Daemon(5,3);
+        Daemon demone = new Daemon(5,3, true);
 
         Object object = new Object();
         Room stanza1 = new Room(1, "Lago", demone,  object,
@@ -41,12 +41,12 @@ public class App extends Application {
                 "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
                         "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
                         "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "Raziel.png");
+                "spada.png");
         Room stanza4 = new Room(2, "Lago", demone,  object,
                 "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
                         "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
                         "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "Raziel.png");
+                "coppa.png");
         Room stanza5 = new Room(2, "Lago", demone,  object,
                 "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
                         "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +

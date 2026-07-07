@@ -85,7 +85,8 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
 
         // settiamo le immagini degli oggetti
         if (esito > 0){ // se abbiamo vinto, perchè abbiamo preso l'oggetto magico
-            Image image = new Image(getClass().getResourceAsStream("/images/spada.png"));
+            String immagine = "/images/" + this.game.getRooms().get(scenario-1).getImmagine();
+            Image image = new Image(getClass().getResourceAsStream(immagine));
             this.setImmagineOggetti(image);
             this.game.getRooms().get(scenario-1).setDone(true);
         }
