@@ -1,0 +1,102 @@
+{
+  "shadowhunters": {
+    "vita": 0,
+    "attacco": 10,
+    "difesa": 8
+  },
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {},
+      "text": "118i altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "immagine": "Raziel.png",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {},
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "immagine": "Raziel.png",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {},
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "immagine": "spada.png",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {},
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "immagine": "coppa.png",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {},
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "immagine": "Raziel.png",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {},
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "immagine": "Raziel.png",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {},
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "immagine": "Raziel.png",
+      "done": false
+    }
+  ],
+  "evocaRaziel": false,
+  "call_room": 0
+}

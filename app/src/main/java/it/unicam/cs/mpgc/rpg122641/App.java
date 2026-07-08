@@ -11,6 +11,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class App extends Application {
@@ -18,63 +25,23 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+        // recuperiamo le configurazioni memorizzate del gioco dal file json
 
-        Shadowhunters shadowhunters = new Shadowhunters(10,8);
-        ArrayList<Room> rooms = new ArrayList<Room>();
-        Daemon demone = new Daemon(5,3, true);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        Object object = new Object();
-        Room stanza1 = new Room(1, "Lago", demone,  object,
-                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
-                "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "Raziel.png");
+        Game game = null; // game è l'oggetto che ha tutte le info del gioco
 
+        try (FileReader reader = new FileReader("persona.json")) {
 
+            game   = gson.fromJson(reader, Game.class);
 
-        Room stanza2 = new Room(2, "Lago", demone,  object,
-                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
-                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "Raziel.png");
-          Room stanza3 = new Room(2, "Lago", demone,  object,
-                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
-                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "spada.png");
-        Room stanza4 = new Room(2, "Lago", demone,  object,
-                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
-                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "coppa.png");
-        Room stanza5 = new Room(2, "Lago", demone,  object,
-                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
-                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "Raziel.png");
-        Room stanza6 = new Room(2, "Lago", demone,  object,
-                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
-                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "Raziel.png");
-        Room stanza7 = new Room(2, "Lago", demone,  object,
-                "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui...   " +
-                        "Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! " +
-                        "Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-                "Raziel.png");
+        } catch (IOException e) {
 
+           e.printStackTrace();
 
+        }
 
-        rooms.add(stanza1);
-        rooms.add(stanza2);
-        rooms.add(stanza3);
-        rooms.add(stanza4);
-        rooms.add(stanza5);
-        rooms.add(stanza6);
-        rooms.add(stanza7);
-        Game game = new Game( shadowhunters, rooms);
-
-
+        // una volta caricato il gioco, si parte!
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
 
         Scene scene = new Scene(loader.load(), 600, 700);
@@ -82,14 +49,12 @@ public class App extends Application {
         StartController controller = loader.getController();
         controller.setGame(game); // passiamo l'oggeto gioco che varrà per tutti i controller
 
-
         stage.setTitle("Shadowhunters");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-
         launch();
     }
 }
