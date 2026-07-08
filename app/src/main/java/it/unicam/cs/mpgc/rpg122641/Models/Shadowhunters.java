@@ -9,9 +9,6 @@ public Shadowhunters(int attacco, int difesa){
 
     super(attacco,difesa);
 
-
-
-
 }
 
 

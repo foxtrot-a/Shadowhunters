@@ -17,4 +17,11 @@ public abstract  class Personaggio {
         return difesa;
     }
 
+    public void setAttacco(int attacco) {
+        this.attacco = attacco;
     }
+
+    public void setDifesa(int difesa) {
+        this.difesa = difesa;
+    }
+}

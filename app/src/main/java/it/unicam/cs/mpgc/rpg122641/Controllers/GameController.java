@@ -70,10 +70,10 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
         int esito = 0;
         switch (button.getId()) {
             case "1": // attacca
-                esito = this.game.assegnaEsito(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa());
+                esito = this.game.mossa(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa(),this.scenario,Integer.parseInt(button.getId()));
                 break;
             case "2": //difendi
-                esito = this.game.assegnaEsito(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco());
+                esito = this.game.mossa(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,Integer.parseInt(button.getId()));
                 break;
             case "3": //fuggi
                 this.back(event);
@@ -85,7 +85,6 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
             String immagine = "/images/" + this.game.getRooms().get(scenario-1).getObject().getImmagePath();
             Image image = new Image(getClass().getResourceAsStream(immagine));
             this.setImmagineOggetti(image);
-            this.game.getRooms().get(scenario-1).setDone(true);
         }
     }
 

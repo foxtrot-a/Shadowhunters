@@ -44,36 +44,41 @@ public class Game {
     }
 
     // logica del gioco per combattimenti
-    public int mossa(int var1, int var2, int scenario){
+    public int mossa(int var1, int var2, int scenario, int scelta){
+
+        int danno = var1-var2;
 
         switch (scenario) {
-            case 1:
+            case 1: //todo
                 //la stanza 1 deve avere un comportamento differente dalle altre, perhcè ha
                 //un ulteriore requisito per ricevere l'oggetto, che in questo caso sarà l'Angelo
                 break;
 
             case 2:
-                break;
-
             case 3:
-                break;
-
             case 4:
-                break;
-
             case 5:
-                break;
-
             case 6:
-                break;
-
             case 7:
+
+                if (danno > 0){ // il giocatore ha vinto contro il mostro
+                    // se vinciamo aggiungiamo al parametro dell'attacco
+                    this.shadowhunters.setAttacco(this.shadowhunters.getAttacco()+danno);
+                    // il demone è sconfitto e azzeriamo i suoi parametri di gioco
+                    this.getRooms().get(scenario-1).getDaemon().setAttacco(0);
+                    this.getRooms().get(scenario-1).getDaemon().setDifesa(0);
+                    // settiamo che abbiamo superato la stanza
+                    this.getRooms().get(scenario-1).setDone(true);
+                }else{
+                    //todo
+               }
+
                 break;
 
             default:
                 break;
         }
-        int danno = var1-var2;
+
         return danno;
 
     }
