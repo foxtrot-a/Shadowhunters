@@ -9,8 +9,6 @@ public abstract  class Personaggio {
         this.attacco = attacco;
         this.difesa = difesa;
     }
-
-
     public int getAttacco() {
         return attacco;
     }

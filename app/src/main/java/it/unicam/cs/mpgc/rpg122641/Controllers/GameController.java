@@ -39,8 +39,6 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     @FXML
     private ImageView img7;
 
-
-
     @FXML
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
                                     // che ci servono
@@ -51,8 +49,7 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
         for(int i = 0; i < this.game.getRooms().size(); i++){
             if (this.game.getRooms().get(i).isDone() == true){
                 // recuperiamo l'immagine dell'oggetto dal game
-                String immagine = "/images/" + this.game.getRooms().get(i).getImmagine();
-//System.out.println(immagine);
+                String immagine = "/images/" + this.game.getRooms().get(i).getObject().getImmagePath();
                 Image image = new Image(getClass().getResourceAsStream(immagine));
                 setImmagineOggetti(image);
               }
@@ -85,7 +82,7 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
 
         // settiamo le immagini degli oggetti
         if (esito > 0){ // se abbiamo vinto, perchè abbiamo preso l'oggetto magico
-            String immagine = "/images/" + this.game.getRooms().get(scenario-1).getImmagine();
+            String immagine = "/images/" + this.game.getRooms().get(scenario-1).getObject().getImmagePath();
             Image image = new Image(getClass().getResourceAsStream(immagine));
             this.setImmagineOggetti(image);
             this.game.getRooms().get(scenario-1).setDone(true);

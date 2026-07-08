@@ -41,6 +41,42 @@ public class Game {
 
         int danno = var1-var2;
         return danno;
+    }
+
+    // logica del gioco per combattimenti
+    public int mossa(int var1, int var2, int scenario){
+
+        switch (scenario) {
+            case 1:
+                //la stanza 1 deve avere un comportamento differente dalle altre, perhcè ha
+                //un ulteriore requisito per ricevere l'oggetto, che in questo caso sarà l'Angelo
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            case 5:
+                break;
+
+            case 6:
+                break;
+
+            case 7:
+                break;
+
+            default:
+                break;
+        }
+        int danno = var1-var2;
+        return danno;
 
     }
+
+
 }
