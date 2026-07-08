@@ -22,15 +22,12 @@
 
             <Label style="-fx-text-fill: white;" text="Attacco" />
 
-            <ProgressBar progress="1.0" />
+            <Label fx:id="attacco" style="-fx-text-fill: white;"  />
 
             <Label style="-fx-text-fill: white;" text="Difesa" />
 
-            <ProgressBar progress="1.0" />
+            <Label fx:id="difesa" style="-fx-text-fill: white;"  />
 
-            <Label style="-fx-text-fill: white;" text="Vita Totale" />
-
-            <ProgressBar progress="1.0" />
         </HBox>
     </top>
 
@@ -38,8 +35,8 @@
         <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="510.0" prefWidth="426.0">
 
             <AnchorPane prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #1a1a1a;">
-                <Label style="-fx-text-fill: white; -fx-font-size: 18;" text="qui inserisco la figura dell'oggetto magico che si vince" />
-                <Label layoutX="20" layoutY="20" style="-fx-text-fill: white; -fx-font-size: 18;" text="Qui inserisco la figura del mostro " />
+                <Label fx:id="mostroAttacco" style="-fx-text-fill: white; -fx-font-size: 18;" text="qui inserisco la figura dell'oggetto magico che si vince" />
+                <Label fx:id="mostroDifesa" layoutX="20" layoutY="20" style="-fx-text-fill: white; -fx-font-size: 18;" text="Qui inserisco la figura del mostro " />
             </AnchorPane>
 
             <TextArea fx:id="pp" editable="false" prefHeight="82.0" prefWidth="425.0" style="-fx-font-family: monospace;" text="Qui scrivo i suggerimenti o altro" wrapText="true" />

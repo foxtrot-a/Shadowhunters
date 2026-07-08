@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -38,13 +39,27 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     private ImageView img6;
     @FXML
     private ImageView img7;
-
+    @FXML
+    private Label attacco;
+    @FXML
+    private Label difesa;
+    @FXML
+    private Label mostroAttacco;
+    @FXML
+    private Label mostroDifesa;
     @FXML
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
                                     // che ci servono
         this.game = game;
         Room room = game.getRooms().get(scenario-1);
         pp.setText(room.getText());     // inseriamo il testo nella parte bianca
+        attacco.setText(String.valueOf(this.game.getShadowhunters().getAttacco()));
+        difesa.setText(String.valueOf(this.game.getShadowhunters().getDifesa()));
+        mostroAttacco.setText(String.valueOf(room.getDaemon().getAttacco()));
+        mostroDifesa.setText(String.valueOf(room.getDaemon().getDifesa()));
+
+
+
 
         for(int i = 0; i < this.game.getRooms().size(); i++){
             if (this.game.getRooms().get(i).isDone() == true){
@@ -85,6 +100,11 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
             String immagine = "/images/" + this.game.getRooms().get(scenario-1).getObject().getImmagePath();
             Image image = new Image(getClass().getResourceAsStream(immagine));
             this.setImmagineOggetti(image);
+            attacco.setText(String.valueOf(this.game.getShadowhunters().getAttacco()));
+            difesa.setText(String.valueOf(this.game.getShadowhunters().getDifesa()));
+            mostroAttacco.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getAttacco()));
+            mostroDifesa.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getDifesa()));
+
         }
     }
 
