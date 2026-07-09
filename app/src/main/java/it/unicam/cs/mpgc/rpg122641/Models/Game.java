@@ -17,7 +17,6 @@ public class Game {
         this.shadowhunters = shadowhunters;
         this.evocaRaziel = false;
     }
-
     public Shadowhunters getShadowhunters() {
         return shadowhunters;
     }
@@ -26,36 +25,19 @@ public class Game {
         return rooms;
     }
 
-    public boolean isEvocaRaziel() {
-        return evocaRaziel;
-    }
-
-    public int getCall_room() {
-        return call_room;
-    }
-    public void setCall_room(int call_room) {
-        this.call_room = call_room;
-    }
-
-    public int assegnaEsito(int var1, int var2){
-
-        int danno = var1-var2;
-        return danno;
-    }
-
     // logica del gioco per combattimenti
     public int mossa(int var1, int var2, int scenario, int scelta){
         int danno =0;
         switch (scelta){
             case 1:  // attacca
-               danno  = var1-var2;
-            break;
+                danno  = var1-var2;
+                break;
             case 2:  // difesa
                 danno  = var2-var1;
-            break;
+                break;
             case 3: //fuggi
                 danno = -1;
-            break;
+                break;
         }
 
         switch (scenario) {
@@ -63,9 +45,9 @@ public class Game {
                 //la stanza 1 deve avere un comportamento differente dalle altre, perhcè ha
                 //un ulteriore requisito per ricevere l'oggetto, che in questo caso sarà l'Angelo
                 if (this.getRooms().get(1).isDone() == true &&
-                    this.getRooms().get(3).isDone() == true &&
-                    danno > 0){
-                // significa che ci sono due strumenti mortali e ha superato il demone
+                        this.getRooms().get(3).isDone() == true &&
+                        danno > 0){
+                    // significa che ci sono due strumenti mortali e ha superato il demone
                 } else{
 
                 }
@@ -107,7 +89,7 @@ public class Game {
                         this.shadowhunters.setAttacco(this.shadowhunters.getAttacco()+danno);
                         this.shadowhunters.setDifesa(this.shadowhunters.getDifesa()+danno);
                     }
-               }
+                }
                 break;
 
             default:
@@ -117,4 +99,5 @@ public class Game {
         return danno;
 
     }
+
 }

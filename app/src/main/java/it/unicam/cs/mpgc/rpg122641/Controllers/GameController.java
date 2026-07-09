@@ -19,10 +19,10 @@ import java.io.IOException;
 
 public class GameController {
 
-private Game game; // oggetto gioco principale
-private  int scenario; // per recuperare gli oggetti dello scenario specificato
+    private Game game; // oggetto gioco principale
+    private  int scenario; // per recuperare gli oggetti dello scenario specificato
 
-// qui inseriamo il riferimento alla label o agli oggetti che ci servono del file FXML
+    // qui inseriamo il riferimento alla label o agli oggetti che ci servono del file FXML
     @FXML
     TextArea pp;
     @FXML
@@ -60,7 +60,7 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
 
     @FXML
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
-                                    // che ci servono
+        // che ci servono
         this.game = game;
         Room room = game.getRooms().get(scenario-1);
         pp.setText(room.getText());     // inseriamo il testo nella parte bianca
@@ -74,7 +74,7 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
                 String immagine = "/images/" + this.game.getRooms().get(i).getObject().getImmagePath();
                 Image image = new Image(getClass().getResourceAsStream(immagine));
                 setImmagineOggetti(image);
-              }
+            }
         }
         if (room.isDone() == true){
             bt1.setVisible(false);
@@ -91,7 +91,7 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
 
     }
 
-   public  void setScenario(int i) {
+    public  void setScenario(int i) {
         this.scenario = i;
     }
 
@@ -146,10 +146,10 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
             esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
 
 
-                bt1.setVisible(false);
-                bt2.setVisible(false);
-                bt3.setVisible(false);
-                bt4.setVisible(true);
+            bt1.setVisible(false);
+            bt2.setVisible(false);
+            bt3.setVisible(false);
+            bt4.setVisible(true);
 
 
 
@@ -184,7 +184,7 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
         }
     }
 
-//metodo per tornare indietro, riutulizzabile in più punti
+    //metodo per tornare indietro, riutulizzabile in più punti
     private void back(ActionEvent event) throws IOException{
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/room-view.fxml"));

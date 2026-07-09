@@ -90,7 +90,7 @@
       "name": "Lago",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 5,
+        "attacco": 80,
         "difesa": 3
       },
       "object": {
