@@ -28,18 +28,18 @@ public class Game {
     // logica del gioco per combattimenti
     public int mossa(int var1, int var2, int scenario, int scelta){
         int danno =0;
-        switch (scelta){
-            case 1:  // attacca
-                danno  = var1-var2;
-                break;
-            case 2:  // difesa
-                danno  = var2-var1;
-                break;
-            case 3: //fuggi
-                danno = -1;
-                break;
-        }
-
+//        switch (scelta){
+//            case 1:  // attacca
+//                danno  = var1-var2;
+//                break;
+//            case 2:  // difesa
+//                danno  = var2-var1;
+//                break;
+//            case 3: //fuggi
+//                danno = -1;
+//                break;
+//        }
+danno = var1 - var2;
         switch (scenario) {
             case 1: //todo
                 //la stanza 1 deve avere un comportamento differente dalle altre, perhcè ha
@@ -61,7 +61,9 @@ public class Game {
             case 5:
             case 6:
             case 7:
-
+                System.out.println(var1);
+                System.out.println(var2);
+                System.out.println(danno);
                 if (danno > 0){ // il giocatore ha vinto contro il mostro
                     // il demone è sconfitto e azzeriamo i suoi parametri di gioco
                     this.getRooms().get(scenario-1).getDaemon().setAttacco(0);
@@ -72,7 +74,7 @@ public class Game {
                     // aggiorniamo il punteggio del giocatore
                     if (scelta == 1){
                         this.shadowhunters.setAttacco(this.shadowhunters.getAttacco()+danno);
-                    }else{
+                    }else if (scelta == 2){
                         this.shadowhunters.setDifesa(this.shadowhunters.getDifesa()+danno);
                     }
 
@@ -99,5 +101,11 @@ public class Game {
         return danno;
 
     }
+
+    private void setGioco(){
+
+
+    }
+
 
 }

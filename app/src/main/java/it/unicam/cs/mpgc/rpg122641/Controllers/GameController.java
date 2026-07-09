@@ -81,6 +81,7 @@ public class GameController {
             bt2.setVisible(false);
             bt3.setVisible(false);
             bt4.setVisible(true);
+            esitoRoom.setText("Sei già stato qui e hai vinto lo scontro!");
         }else{
             bt1.setVisible(true);
             bt2.setVisible(true);
@@ -124,7 +125,7 @@ public class GameController {
                 esito = this.game.mossa(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa(),this.scenario,scelta);
                 break;
             case 2: //difendi
-                esito = this.game.mossa(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,scelta);
+                esito = this.game.mossa(this.game.getShadowhunters().getDifesa(), this.game.getRooms().get(scenario-1).getDaemon().getAttacco(),this.scenario,scelta);
                 break;
             case 3: //fuggi
                 esito = this.game.mossa(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,scelta);
@@ -151,11 +152,17 @@ public class GameController {
             bt3.setVisible(false);
             bt4.setVisible(true);
 
-
-
-
         }else{
-            esitoRoom.setText("Hai perso lo scontro!");
+            if (this.game.getRooms().get(scenario-1).getDaemon().isDemoneSuperiore() == true){
+                esitoRoom.setText("Hai perso lo scontro con il Demone Superiore! Game Over!");
+                bt4.setVisible(false);
+                bt1.setVisible(false);
+                bt2.setVisible(false);
+                bt3.setVisible(false);
+            }else{
+                esitoRoom.setText("Hai perso lo scontro, ma torna indietro e rimettiti in forze!");
+            }
+
         }
     }
 

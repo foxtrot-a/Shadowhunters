@@ -8,4 +8,7 @@ private boolean demoneSuperiore;
        this.demoneSuperiore = demoneSuperiore;
 }
 
+    public boolean isDemoneSuperiore() {
+        return demoneSuperiore;
+    }
 }
