@@ -48,6 +48,8 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     @FXML
     private Label mostroDifesa;
     @FXML
+    private Label esitoRoom;
+    @FXML
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
                                     // che ci servono
         this.game = game;
@@ -57,10 +59,6 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
         difesa.setText(String.valueOf(this.game.getShadowhunters().getDifesa()));
         mostroAttacco.setText(String.valueOf(room.getDaemon().getAttacco()));
         mostroDifesa.setText(String.valueOf(room.getDaemon().getDifesa()));
-
-
-
-
         for(int i = 0; i < this.game.getRooms().size(); i++){
             if (this.game.getRooms().get(i).isDone() == true){
                 // recuperiamo l'immagine dell'oggetto dal game
@@ -104,7 +102,7 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
             difesa.setText(String.valueOf(this.game.getShadowhunters().getDifesa()));
             mostroAttacco.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getAttacco()));
             mostroDifesa.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getDifesa()));
-
+            esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
         }
     }
 
