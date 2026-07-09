@@ -53,7 +53,8 @@ public class Game {
             case 2:  // difesa
                 danno  = var2-var1;
             break;
-            case 3: //fuggi // todo
+            case 3: //fuggi
+                danno = -1;
             break;
         }
 
@@ -61,6 +62,15 @@ public class Game {
             case 1: //todo
                 //la stanza 1 deve avere un comportamento differente dalle altre, perhcè ha
                 //un ulteriore requisito per ricevere l'oggetto, che in questo caso sarà l'Angelo
+                if (this.getRooms().get(1).isDone() == true &&
+                    this.getRooms().get(3).isDone() == true &&
+                    danno > 0){
+                // significa che ci sono due strumenti mortali e ha superato il demone
+                } else{
+
+                }
+
+
                 break;
 
             case 2:
@@ -81,7 +91,7 @@ public class Game {
                     if (scelta == 1){
                         this.shadowhunters.setAttacco(this.shadowhunters.getAttacco()+danno);
                     }else{
-                        this.shadowhunters.setAttacco(this.shadowhunters.getDifesa()+danno);
+                        this.shadowhunters.setDifesa(this.shadowhunters.getDifesa()+danno);
                     }
 
                 }else{
@@ -90,8 +100,12 @@ public class Game {
                     // aggiorniamo il punteggio del demone, in base alla mosa fatta dal giocatore
                     if (scelta == 1){
                         this.getRooms().get(scenario-1).getDaemon().setAttacco( this.getRooms().get(scenario-1).getDaemon().getAttacco()+danno);
-                    }else{
+                    }else if (scelta == 2){
                         this.getRooms().get(scenario-1).getDaemon().setAttacco( this.getRooms().get(scenario-1).getDaemon().getDifesa()+danno);
+                    }else if(scelta == 3){
+                        // se il giocatore ha scelto fuggi, togliamo il punteggio
+                        this.shadowhunters.setAttacco(this.shadowhunters.getAttacco()+danno);
+                        this.shadowhunters.setDifesa(this.shadowhunters.getDifesa()+danno);
                     }
                }
                 break;
@@ -103,12 +117,4 @@ public class Game {
         return danno;
 
     }
-
-
-    private void aggiornaPunteggio(){
-
-
-    }
-
-
 }

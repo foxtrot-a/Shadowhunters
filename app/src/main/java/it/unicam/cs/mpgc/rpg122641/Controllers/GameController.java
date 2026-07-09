@@ -50,6 +50,15 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     @FXML
     private Label esitoRoom;
     @FXML
+    private Button bt1;
+    @FXML
+    private Button bt2;
+    @FXML
+    private Button bt3;
+    @FXML
+    private Button bt4;
+
+    @FXML
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
                                     // che ci servono
         this.game = game;
@@ -67,6 +76,19 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
                 setImmagineOggetti(image);
               }
         }
+        if (room.isDone() == true){
+            bt1.setVisible(false);
+            bt2.setVisible(false);
+            bt3.setVisible(false);
+            bt4.setVisible(true);
+        }else{
+            bt1.setVisible(true);
+            bt2.setVisible(true);
+            bt3.setVisible(true);
+            bt4.setVisible(false);
+        }
+
+
     }
 
    public  void setScenario(int i) {
@@ -79,16 +101,35 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
     private void mossa(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
         System.out.println(button.getId());
+        int scelta = 0;
+
+        if(button.getId().equals("bt1")){
+            scelta = 1;
+        }
+        if(button.getId().equals("bt2")){
+            scelta = 2;
+        }
+        if(button.getId().equals("bt3")){
+            scelta = 3;
+        }
+
+        if(button.getId().equals("bt4")){
+            scelta = 4;
+        }
+
 
         int esito = 0;
-        switch (button.getId()) {
-            case "1": // attacca
-                esito = this.game.mossa(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa(),this.scenario,Integer.parseInt(button.getId()));
+        switch (scelta) {
+            case 1:// attacca
+                esito = this.game.mossa(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa(),this.scenario,scelta);
                 break;
-            case "2": //difendi
-                esito = this.game.mossa(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,Integer.parseInt(button.getId()));
+            case 2: //difendi
+                esito = this.game.mossa(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,scelta);
                 break;
-            case "3": //fuggi
+            case 3: //fuggi
+                esito = this.game.mossa(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,scelta);
+                break;
+            case 4:
                 this.back(event);
                 break;
         }
@@ -103,6 +144,16 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
             mostroAttacco.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getAttacco()));
             mostroDifesa.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getDifesa()));
             esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
+
+
+                bt1.setVisible(false);
+                bt2.setVisible(false);
+                bt3.setVisible(false);
+                bt4.setVisible(true);
+
+
+
+
         }else{
             esitoRoom.setText("Hai perso lo scontro!");
         }

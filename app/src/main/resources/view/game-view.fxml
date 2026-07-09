@@ -35,54 +35,73 @@
     <center>
         <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="510.0" prefWidth="426.0">
 
-            <AnchorPane prefHeight="270.0" prefWidth="550.0"
+            <AnchorPane prefHeight="270.0"
+                        prefWidth="550.0"
                         style="-fx-background-color: #1a1a1a;">
 
-                <BorderPane layoutX="20" layoutY="20" prefWidth="500">
+                <BorderPane AnchorPane.topAnchor="20"
+                            AnchorPane.bottomAnchor="20"
+                            AnchorPane.leftAnchor="20"
+                            AnchorPane.rightAnchor="20">
 
 
                     <left>
-                        <ImageView fx:id="imgMostro"
-                                   fitWidth="120"
-                                   fitHeight="120"
-                                   preserveRatio="true">
-                            <image>
-                                <Image url="@/images/demone.png"/>
-                            </image>
-                        </ImageView>
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="25">
+
+                            <ImageView fx:id="imgMostro"
+                                       fitWidth="120"
+                                       fitHeight="120"
+                                       preserveRatio="true">
+                                <image>
+                                    <Image url="@/images/demone.png"/>
+                                </image>
+                            </ImageView>
+
+
+                            <VBox alignment="CENTER_LEFT"
+                                  spacing="10">
+
+                                <Label text="Difesa"
+                                       style="-fx-text-fill: white;
+                                  -fx-font-size: 18;"/>
+
+                                <Label fx:id="mostroDifesa"
+                                       text="0"
+                                       style="-fx-text-fill: white;
+                                  -fx-font-size: 18;"/>
+
+                                <Label text="Attacco"
+                                       style="-fx-text-fill: white;
+                                  -fx-font-size: 18;"/>
+
+                                <Label fx:id="mostroAttacco"
+                                       text="0"
+                                       style="-fx-text-fill: white;
+                                  -fx-font-size: 18;"/>
+
+                            </VBox>
+
+                        </HBox>
                     </left>
 
+
                     <center>
-                        <VBox spacing="10" style="-fx-padding: 0 0 0 20;">
+                        <VBox alignment="CENTER"
+                              prefWidth="300">
 
-                            <Label text="Difesa"
-                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
-
-                            <Label fx:id="mostroDifesa"
-                                   text="0"
-                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
-
-                            <Label text="Attacco"
-                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
-
-                            <Label fx:id="mostroAttacco"
-                                   text="0"
-                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
+                            <Label fx:id="esitoRoom"
+                                   wrapText="true"
+                                   maxWidth="300"
+                                   alignment="CENTER"
+                                   style="-fx-text-fill: lime;
+                              -fx-font-size: 22;
+                              -fx-font-weight: bold;"/>
+                            <Button fx:id="bt4" text="Stanza principale" onAction="#mossa"/>
 
                         </VBox>
                     </center>
 
-
-                    <right>
-                        <VBox alignment="TOP_CENTER"
-                              spacing="10"
-                              style="-fx-padding: 0 0 0 40;">
-
-                            <Label fx:id="esitoRoom"  wrapText="true" prefWidth="300"
-                                   style="-fx-text-fill: lime; -fx-font-size: 22; -fx-font-weight: bold;"/>
-
-                        </VBox>
-                    </right>
 
                 </BorderPane>
 
@@ -172,9 +191,9 @@
             </HBox>
 
             <HBox spacing="10" alignment="CENTER">
-                <Button fx:id="1" text="Attacca" onAction="#mossa"/>
-                <Button fx:id="2" text="Difendi" onAction="#mossa"/>
-                <Button fx:id="3" text="Fuggi" onAction="#mossa"/>
+                <Button fx:id="bt1" text="Attacca" onAction="#mossa"/>
+                <Button fx:id="bt2" text="Difendi" onAction="#mossa"/>
+                <Button fx:id="bt3" text="Fuggi" onAction="#mossa"/>
             </HBox>
 
         </VBox>
