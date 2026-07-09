@@ -103,6 +103,8 @@ private  int scenario; // per recuperare gli oggetti dello scenario specificato
             mostroAttacco.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getAttacco()));
             mostroDifesa.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getDifesa()));
             esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
+        }else{
+            esitoRoom.setText("Hai perso lo scontro!");
         }
     }
 

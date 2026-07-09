@@ -13,6 +13,7 @@
 
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="it.unicam.cs.mpgc.rpg122641.Controllers.GameController">
 
@@ -34,9 +35,57 @@
     <center>
         <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="510.0" prefWidth="426.0">
 
-            <AnchorPane prefHeight="270.0" prefWidth="550.0" style="-fx-background-color: #1a1a1a;">
-                <Label fx:id="mostroAttacco" style="-fx-text-fill: white; -fx-font-size: 18;" text="qui inserisco la figura dell'oggetto magico che si vince" />
-                <Label fx:id="mostroDifesa" layoutX="20" layoutY="20" style="-fx-text-fill: white; -fx-font-size: 18;" text="Qui inserisco la figura del mostro " />
+            <AnchorPane prefHeight="270.0" prefWidth="550.0"
+                        style="-fx-background-color: #1a1a1a;">
+
+                <BorderPane layoutX="20" layoutY="20" prefWidth="500">
+
+
+                    <left>
+                        <ImageView fx:id="imgMostro"
+                                   fitWidth="120"
+                                   fitHeight="120"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@/images/demone.png"/>
+                            </image>
+                        </ImageView>
+                    </left>
+
+                    <center>
+                        <VBox spacing="10" style="-fx-padding: 0 0 0 20;">
+
+                            <Label text="Difesa"
+                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
+
+                            <Label fx:id="mostroDifesa"
+                                   text="0"
+                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
+
+                            <Label text="Attacco"
+                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
+
+                            <Label fx:id="mostroAttacco"
+                                   text="0"
+                                   style="-fx-text-fill: white; -fx-font-size: 18;"/>
+
+                        </VBox>
+                    </center>
+
+
+                    <right>
+                        <VBox alignment="TOP_CENTER"
+                              spacing="10"
+                              style="-fx-padding: 0 0 0 40;">
+
+                            <Label fx:id="esitoRoom"  wrapText="true" prefWidth="300"
+                                   style="-fx-text-fill: lime; -fx-font-size: 22; -fx-font-weight: bold;"/>
+
+                        </VBox>
+                    </right>
+
+                </BorderPane>
+
             </AnchorPane>
 
             <TextArea fx:id="pp" editable="false" prefHeight="82.0" prefWidth="425.0" style="-fx-font-family: monospace;" text="Qui scrivo i suggerimenti o altro" wrapText="true" />

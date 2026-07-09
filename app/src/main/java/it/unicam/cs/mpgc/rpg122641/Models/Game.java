@@ -45,8 +45,17 @@ public class Game {
 
     // logica del gioco per combattimenti
     public int mossa(int var1, int var2, int scenario, int scelta){
-
-        int danno = var1-var2;
+        int danno =0;
+        switch (scelta){
+            case 1:  // attacca
+               danno  = var1-var2;
+            break;
+            case 2:  // difesa
+                danno  = var2-var1;
+            break;
+            case 3: //fuggi // todo
+            break;
+        }
 
         switch (scenario) {
             case 1: //todo
@@ -62,17 +71,29 @@ public class Game {
             case 7:
 
                 if (danno > 0){ // il giocatore ha vinto contro il mostro
-                    // se vinciamo aggiungiamo al parametro dell'attacco
-                    this.shadowhunters.setAttacco(this.shadowhunters.getAttacco()+danno);
                     // il demone è sconfitto e azzeriamo i suoi parametri di gioco
                     this.getRooms().get(scenario-1).getDaemon().setAttacco(0);
                     this.getRooms().get(scenario-1).getDaemon().setDifesa(0);
                     // settiamo che abbiamo superato la stanza
                     this.getRooms().get(scenario-1).setDone(true);
-                }else{
-                    //todo
-               }
 
+                    // aggiorniamo il punteggio del giocatore
+                    if (scelta == 1){
+                        this.shadowhunters.setAttacco(this.shadowhunters.getAttacco()+danno);
+                    }else{
+                        this.shadowhunters.setAttacco(this.shadowhunters.getDifesa()+danno);
+                    }
+
+                }else{
+                    //il demone ha vinto e aggiungiamo a lui il punteggio
+
+                    // aggiorniamo il punteggio del demone, in base alla mosa fatta dal giocatore
+                    if (scelta == 1){
+                        this.getRooms().get(scenario-1).getDaemon().setAttacco( this.getRooms().get(scenario-1).getDaemon().getAttacco()+danno);
+                    }else{
+                        this.getRooms().get(scenario-1).getDaemon().setAttacco( this.getRooms().get(scenario-1).getDaemon().getDifesa()+danno);
+                    }
+               }
                 break;
 
             default:
@@ -80,6 +101,12 @@ public class Game {
         }
 
         return danno;
+
+    }
+
+
+    private void aggiornaPunteggio(){
+
 
     }
 
