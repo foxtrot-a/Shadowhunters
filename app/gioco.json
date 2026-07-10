@@ -9,7 +9,7 @@
       "id": 1,
       "name": "Lago",
       "daemon": {
-        "demoneSuperiore": true,
+        "demoneSuperiore": false,
         "attacco": 5,
         "difesa": 3
       },

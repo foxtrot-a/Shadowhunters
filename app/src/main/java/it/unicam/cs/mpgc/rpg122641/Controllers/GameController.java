@@ -16,10 +16,12 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class GameController {
 
     private Game game; // oggetto gioco principale
+    private Room room; // anche se posso recuperarlo dal game, uso molte volte tutto il recupero, poco leggibile
     private  int scenario; // per recuperare gli oggetti dello scenario specificato
 
     // qui inseriamo il riferimento alla label o agli oggetti che ci servono del file FXML
@@ -57,153 +59,116 @@ public class GameController {
     private Button bt3;
     @FXML
     private Button bt4;
-
+    private List<ImageView> immagini;
     @FXML
-    public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label
-        // che ci servono
+    public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label che ci servono
         this.game = game;
-        Room room = game.getRooms().get(scenario-1);
-        pp.setText(room.getText());     // inseriamo il testo nella parte bianca
-        attacco.setText(String.valueOf(this.game.getShadowhunters().getAttacco()));
-        difesa.setText(String.valueOf(this.game.getShadowhunters().getDifesa()));
-        mostroAttacco.setText(String.valueOf(room.getDaemon().getAttacco()));
-        mostroDifesa.setText(String.valueOf(room.getDaemon().getDifesa()));
-        for(int i = 0; i < this.game.getRooms().size(); i++){
-            if (this.game.getRooms().get(i).isDone() == true){
-                // recuperiamo l'immagine dell'oggetto dal game
-                String immagine = "/images/" + this.game.getRooms().get(i).getObject().getImmagePath();
-                Image image = new Image(getClass().getResourceAsStream(immagine));
-                setImmagineOggetti(image);
-            }
-        }
-        if (room.isDone() == true){
-            bt1.setVisible(false);
-            bt2.setVisible(false);
-            bt3.setVisible(false);
-            bt4.setVisible(true);
+        this.room = game.getRooms().get(scenario-1);
+        pp.setText(this.room.getText());     // inseriamo il testo nella parte bianca
+        this.setLabel();
+        game.getRooms().stream().filter(Room::isDone).map(this::getRoomImage).forEach(this::setImmagineOggetti);
+        if (room.isDone()){
             esitoRoom.setText("Sei già stato qui e hai vinto lo scontro!");
+            this.setBottoni(false);
         }else{
-            bt1.setVisible(true);
-            bt2.setVisible(true);
-            bt3.setVisible(true);
-            bt4.setVisible(false);
+            this.setBottoni(true);
         }
-
-
+    }
+    @FXML
+    public void initialize(){
+        immagini = List.of(img1, img2, img3, img4, img5, img6, img7);
     }
 
     public  void setScenario(int i) {
         this.scenario = i;
     }
 
-
     // il giocatore può effettuare una scelta, quindi una mossa
     @FXML
     private void mossa(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
-        System.out.println(button.getId());
-        int scelta = 0;
-
-        if(button.getId().equals("bt1")){
-            scelta = 1;
-        }
-        if(button.getId().equals("bt2")){
-            scelta = 2;
-        }
-        if(button.getId().equals("bt3")){
-            scelta = 3;
-        }
-
-        if(button.getId().equals("bt4")){
-            scelta = 4;
-        }
-
-
-        int esito = 0;
+        boolean esito = false;
+        int scelta = Integer.parseInt(button.getId().substring(2));
         switch (scelta) {
             case 1:// attacca
-                esito = this.game.mossa(this.game.getShadowhunters().getAttacco(), this.game.getRooms().get(scenario-1).getDaemon().getDifesa(),this.scenario,scelta);
+                esito = this.game.mossa(this.game.getShadowhunters().getAttacco(), this.room.getDaemon().getDifesa(),this.scenario,scelta);
                 break;
             case 2: //difendi
-                esito = this.game.mossa(this.game.getShadowhunters().getDifesa(), this.game.getRooms().get(scenario-1).getDaemon().getAttacco(),this.scenario,scelta);
+                esito = this.game.mossa(this.game.getShadowhunters().getDifesa(), this.room.getDaemon().getAttacco(),this.scenario,scelta);
                 break;
             case 3: //fuggi
-                esito = this.game.mossa(this.game.getRooms().get(scenario-1).getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,scelta);
+                esito = this.game.mossa(this.room.getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,scelta);
                 break;
             case 4:
                 this.back(event);
-                break;
+                return;
         }
-
-        // settiamo le immagini degli oggetti
-        if (esito > 0){ // se abbiamo vinto, perchè abbiamo preso l'oggetto magico
-            String immagine = "/images/" + this.game.getRooms().get(scenario-1).getObject().getImmagePath();
-            Image image = new Image(getClass().getResourceAsStream(immagine));
-            this.setImmagineOggetti(image);
-            attacco.setText(String.valueOf(this.game.getShadowhunters().getAttacco()));
-            difesa.setText(String.valueOf(this.game.getShadowhunters().getDifesa()));
-            mostroAttacco.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getAttacco()));
-            mostroDifesa.setText(String.valueOf(this.game.getRooms().get(scenario-1).getDaemon().getDifesa()));
-            esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
-
-
-            bt1.setVisible(false);
-            bt2.setVisible(false);
-            bt3.setVisible(false);
-            bt4.setVisible(true);
-
-        }else{
-            if (this.game.getRooms().get(scenario-1).getDaemon().isDemoneSuperiore() == true){
-                esitoRoom.setText("Hai perso lo scontro con il Demone Superiore! Game Over!");
-                bt4.setVisible(false);
-                bt1.setVisible(false);
-                bt2.setVisible(false);
-                bt3.setVisible(false);
-            }else{
-                esitoRoom.setText("Hai perso lo scontro, ma torna indietro e rimettiti in forze!");
-            }
-
-        }
+        this.aggiornaEsito(esito);
     }
 
     private void setImmagineOggetti(Image image){
-
-        if (img1.getImage() == null){
-            img1.setImage(image);
-        } else
-        if(img2.getImage() == null){
-            img2.setImage(image);
-        } else
-        if (img3.getImage() == null){
-            img3.setImage(image);
-        } else
-        if (img4.getImage() == null){
-            img4.setImage(image);
-        } else
-        if (img5.getImage() == null){
-            img5.setImage(image);
-        } else
-        if (img6.getImage() == null){
-            img6.setImage(image);
-        } else
-        if (img7.getImage() == null){
-            img7.setImage(image);
+        for(ImageView img : immagini){
+            if(img.getImage() == null){
+                img.setImage(image);
+                break;
+            }
         }
+    }
+
+    private void setBottoni(boolean valore){
+            bt1.setVisible(valore);
+            bt2.setVisible(valore);
+            bt3.setVisible(valore);
+            bt4.setVisible(!valore);
+    }
+    private void setLabel (){
+        attacco.setText(String.valueOf(this.game.getShadowhunters().getAttacco()));
+        difesa.setText(String.valueOf(this.game.getShadowhunters().getDifesa()));
+        mostroAttacco.setText(String.valueOf(this.room.getDaemon().getAttacco()));
+        mostroDifesa.setText(String.valueOf(this.room.getDaemon().getDifesa()));
+    }
+
+    private void aggiornaEsito(boolean esito){
+
+        if (esito){ // se abbiamo vinto
+           this.gestisciVittoria();
+        }else{// se abbiamo perso
+            this.gestisciSconfitta();
+        }
+
+    }
+
+    private Image getRoomImage(Room room) {
+        return new Image(getClass().getResourceAsStream("/images/" + room.getObject().getImmagePath()));
+    }
+
+    private void gestisciVittoria(){
+        this.setImmagineOggetti(getRoomImage(room));
+        this.setLabel();
+        esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
+        this.setBottoni(false);
+    }
+
+    private void gestisciSconfitta(){
+        if (this.room.getDaemon().isDemoneSuperiore()){
+            esitoRoom.setText("Hai perso lo scontro con il Demone Superiore! Game Over!");
+            this.setBottoni(false);
+            bt4.setVisible(false);
+        }else{
+            esitoRoom.setText("Hai perso lo scontro, ma torna indietro e rimettiti in forze!");
+            bt4.setVisible(true);
+        }
+
     }
 
     //metodo per tornare indietro, riutulizzabile in più punti
     private void back(ActionEvent event) throws IOException{
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/room-view.fxml"));
         Parent root = loader.load();
-
         RoomController controller = loader.getController();
         controller.setGame(game);
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root, 800, 700));
         stage.show();
-
     }
-
 }
