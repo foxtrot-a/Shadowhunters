@@ -1,5 +1,26 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+
+
+
+import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
+import it.unicam.cs.mpgc.rpg122641.Models.Game;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Game {
 
@@ -19,7 +40,7 @@ public class Game {
 
     // logica del gioco per combattimenti
     public boolean mossa(int var1, int var2, int scenario, int scelta){
-        int danno = var1 - var2;
+        int danno = this.calcolaDanno(var1,var2);
         if (scenario == 1){
             return this.stanzaUno(scenario, scelta, danno);
         }else{
@@ -49,7 +70,7 @@ public class Game {
         room.setDone(true);
 
         switch (scelta){
-            case 1:    shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
+            case 1: shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
                 break;
             case 2: shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
                 break;
@@ -84,4 +105,18 @@ private boolean stanzaUno(int scenario, int scelta, int danno){
 
 }
 
+private int calcolaDanno(int punteggio1, int punteggio2){
+        return punteggio1 - punteggio2;
+}
+
+
+private void resetGioco(){
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    Game game = null; // game è l'oggetto che ha tutte le info del gioco
+    try (FileReader reader = new FileReader("gioco.json")) {
+        game   = gson.fromJson(reader, Game.class);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
 }

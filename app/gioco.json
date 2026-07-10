@@ -47,7 +47,7 @@
       },
       "object": {
         "name": "Stilo",
-        "immagePath": "Raziel.png",
+        "immagePath": "stilo.png",
         "scoreIncrements": 5
       },
       "text": "Benvenuto nella Città di Diamante, sede delle Sorelle di Ferro! Le Sorelle sono colore che forgiano le armi Angeliche. Un Demone le sta minacciando. Salvale e avrai un nuovo Stilo per le Rune!\n",
@@ -55,69 +55,67 @@
     },
     {
       "id": 4,
-      "name": "Lago",
+      "name": "Istituto",
       "daemon": {
         "demoneSuperiore": true,
         "attacco": 5,
         "difesa": 3
       },
       "object": {
-        "name": "Spada",
-        "immagePath": "spada.png",
+        "name": "Coppa",
+        "immagePath": "coppa.png",
         "scoreIncrements": 5
       },
-      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "text": "L'Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone  e recupera la Coppa!",
       "done": false
     },
     {
       "id": 5,
-      "name": "Lago",
+      "name": "Alicante",
       "daemon": {
         "demoneSuperiore": true,
         "attacco": 5,
         "difesa": 3
       },
       "object": {
-        "name": "Spada",
-        "immagePath": "spada.png",
+        "name": "Runa",
+        "immagePath": "runa1.png",
         "scoreIncrements": 5
       },
-      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "text": "Benvenuto ad Alicante! C'è anche qui un Demone che tiene in ostaggio gli altri Cacciatori! Sconfiggilo e avrai una nuova runa potenziata!",
       "done": false
     },
     {
       "id": 6,
-      "name": "Lago",
+      "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
         "attacco": 80,
         "difesa": 3
       },
       "object": {
-        "name": "Spada",
-        "immagePath": "spada.png",
+        "name": "Alloro",
+        "immagePath": "vittoria.png",
         "scoreIncrements": 5
       },
-      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "text": "Sei d'avanti ad Asmodeo, Principe degli Inferi! SPero che tu abbia evocato l'Angelo, perchè altrimenti sei nei guai!",
       "done": false
     },
     {
       "id": 7,
-      "name": "Lago",
+      "name": "Casa2",
       "daemon": {
         "demoneSuperiore": true,
         "attacco": 5,
         "difesa": 3
       },
       "object": {
-        "name": "Spada",
-        "immagePath": "spada.png",
+        "name": "Collana",
+        "immagePath": "stanza7.png",
         "scoreIncrements": 5
       },
-      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
+      "text": "C'è un demone, combatti e avrai una collana potenziata dall'Angelo!",
       "done": false
     }
-  ],
-  "evocaRaziel": false,
-  "call_room": 0
+  ]
 }
