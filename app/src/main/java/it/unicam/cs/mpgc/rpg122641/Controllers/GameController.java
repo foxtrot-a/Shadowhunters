@@ -160,8 +160,11 @@ public class GameController {
             esitoRoom.setText("Hai perso lo scontro con il Demone Superiore! Game Over!");
             this.setBottoni(false);
             bt4.setVisible(false);
-        }else{
+        }else if (this.game.getShadowhunters().isVivo()) {
             esitoRoom.setText("Hai perso lo scontro, ma torna indietro e rimettiti in forze!");
+            bt4.setVisible(true);
+        }else{
+            esitoRoom.setText("Game Over!");
             bt4.setVisible(true);
         }
     }

@@ -106,7 +106,7 @@
       "name": "Casa2",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
+        "attacco": 700,
         "difesa": 3
       },
       "object": {

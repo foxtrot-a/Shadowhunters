@@ -63,8 +63,10 @@ public class Game {
     private void gestisciSconfitta(Daemon daemon, Room room, int scelta, int danno){
         switch (scelta){
             case 1:  daemon.setAttacco(daemon.getAttacco() + danno);
+                    shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
                 break;
             case 2:  daemon.setDifesa(daemon.getDifesa() + danno);
+                    shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
                 break;
             case 3:
                 shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
