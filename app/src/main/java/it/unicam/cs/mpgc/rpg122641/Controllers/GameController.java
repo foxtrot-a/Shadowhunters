@@ -135,7 +135,6 @@ public class GameController {
         }else{// se abbiamo perso
             this.gestisciSconfitta();
         }
-
     }
 
     private Image getRoomImage(Room room) {
@@ -143,10 +142,17 @@ public class GameController {
     }
 
     private void gestisciVittoria(){
-        this.setImmagineOggetti(getRoomImage(room));
         this.setLabel();
-        esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
         this.setBottoni(false);
+        if (this.scenario == 1 && !room.isDone()) {
+            esitoRoom.setText("Scontro Vinto! Ma dovrai tornare per evocare l'Angeloe dovrai sconfiggere un nuvo demone, con il punteggio che vedi!");
+        }else if (room.isDone() && this.scenario != 6) {
+            esitoRoom.setText("Scontro Vinto! Sei un bravo Cacciatore di Demoni!");
+            this.setImmagineOggetti(getRoomImage(room));}
+        else if (room.isDone() && this.scenario == 6 ){
+            esitoRoom.setText("Scontro Vinto con il Demone Superiore, Complimenti!");
+            this.setImmagineOggetti(getRoomImage(room));
+        }
     }
 
     private void gestisciSconfitta(){
@@ -158,7 +164,6 @@ public class GameController {
             esitoRoom.setText("Hai perso lo scontro, ma torna indietro e rimettiti in forze!");
             bt4.setVisible(true);
         }
-
     }
 
     //metodo per tornare indietro, riutulizzabile in più punti

@@ -16,7 +16,7 @@
       "object": {
         "name": "Raziel",
         "immagePath": "Raziel.png",
-        "scoreIncrements": 5
+        "scoreIncrements": 600
       },
       "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
       "done": false
@@ -25,7 +25,7 @@
       "id": 2,
       "name": "Ossa",
       "daemon": {
-        "demoneSuperiore": true,
+        "demoneSuperiore": false,
         "attacco": 5,
         "difesa": 3
       },
@@ -41,7 +41,7 @@
       "id": 3,
       "name": "Città di Diamante",
       "daemon": {
-        "demoneSuperiore": true,
+        "demoneSuperiore": false,
         "attacco": 5,
         "difesa": 3
       },
@@ -57,7 +57,7 @@
       "id": 4,
       "name": "Istituto",
       "daemon": {
-        "demoneSuperiore": true,
+        "demoneSuperiore": false,
         "attacco": 5,
         "difesa": 3
       },
@@ -73,7 +73,7 @@
       "id": 5,
       "name": "Alicante",
       "daemon": {
-        "demoneSuperiore": true,
+        "demoneSuperiore": false,
         "attacco": 5,
         "difesa": 3
       },
@@ -90,8 +90,8 @@
       "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 80,
-        "difesa": 3
+        "attacco": 400,
+        "difesa": 400
       },
       "object": {
         "name": "Alloro",
@@ -105,7 +105,7 @@
       "id": 7,
       "name": "Casa2",
       "daemon": {
-        "demoneSuperiore": true,
+        "demoneSuperiore": false,
         "attacco": 5,
         "difesa": 3
       },

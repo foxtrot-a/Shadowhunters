@@ -1,26 +1,9 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
-
-
-import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
-import it.unicam.cs.mpgc.rpg122641.Models.Game;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class Game {
 
@@ -70,7 +53,7 @@ public class Game {
         room.setDone(true);
 
         switch (scelta){
-            case 1: shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
+            case 1: shadowhunters.setAttacco(shadowhunters.getAttacco() + danno + room.getObject().getScoreIncrements());
                 break;
             case 2: shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
                 break;
@@ -96,13 +79,13 @@ private boolean stanzaUno(int scenario, int scelta, int danno){
         // significa che ci sono due strumenti mortali e ha superato il demone
         this.setGioco( scenario, scelta, danno); // scenario superato e si può aggiungere Raziel come oggetto
         return  true;
-    } else {
+    } else if (danno > 0) {
         // il demone ritorna sempre, perchè la scena non è completa, perchè rchieste anche gli altri due strumenti
         this.getRooms().get(scenario - 1).getDaemon().setAttacco(this.getRooms().get(scenario - 1).getDaemon().getAttacco() + 5);
         this.getRooms().get(scenario - 1).getDaemon().setDifesa(this.getRooms().get(scenario - 1).getDaemon().getDifesa() + 5);
-        return false;
+        return true;// ritorniamo true, perchè ha vinto, ma non ha superato il gioco
     }
-
+return  false;
 }
 
 private int calcolaDanno(int punteggio1, int punteggio2){
