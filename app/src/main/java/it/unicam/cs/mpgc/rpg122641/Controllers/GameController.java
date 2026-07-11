@@ -149,8 +149,7 @@ public class GameController implements IController {
     }
 
     private void gestisciVittoria(){
-        this.setLabel();
-        this.setBottoni(false);
+           this.setBottoni(false);
         if (this.scenario == 1 && !room.isDone()) {
             esitoRoom.setText("Scontro Vinto! Ma dovrai tornare per evocare l'Angeloe dovrai sconfiggere un nuvo demone, con il punteggio che vedi!");
         }else if (room.isDone() && this.scenario != 6) {
