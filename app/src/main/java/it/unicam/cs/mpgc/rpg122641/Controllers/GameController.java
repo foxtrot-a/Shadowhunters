@@ -59,6 +59,8 @@ public class GameController {
     private Button bt3;
     @FXML
     private Button bt4;
+    @FXML
+    private Button bt5;
     private List<ImageView> immagini;
     @FXML
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label che ci servono
@@ -102,6 +104,8 @@ public class GameController {
             case 4:
                 this.back(event);
                 return;
+            case 5: this.game.resetGioco();
+                break;
         }
         this.aggiornaEsito(esito);
     }
@@ -160,17 +164,19 @@ public class GameController {
             esitoRoom.setText("Hai perso lo scontro con il Demone Superiore! Game Over!");
             this.setBottoni(false);
             bt4.setVisible(false);
+            bt5.setVisible(true);
         }else if (this.game.getShadowhunters().isVivo()) {
             esitoRoom.setText("Hai perso lo scontro, ma torna indietro e rimettiti in forze!");
             bt4.setVisible(true);
         }else{
             esitoRoom.setText("Game Over!");
-            bt4.setVisible(true);
+            bt4.setVisible(false);
+            bt5.setVisible(true);
         }
     }
 
     //metodo per tornare indietro, riutulizzabile in più punti
-    private void back(ActionEvent event) throws IOException{
+    public void back(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/room-view.fxml"));
         Parent root = loader.load();
         RoomController controller = loader.getController();

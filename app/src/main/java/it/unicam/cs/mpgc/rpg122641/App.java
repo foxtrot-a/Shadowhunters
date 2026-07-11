@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg122641;
 import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
+import it.unicam.cs.mpgc.rpg122641.Models.Persistenza;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,18 +17,9 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         // recuperiamo le configurazioni memorizzate del gioco dal file json
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Game game = null; // game è l'oggetto che ha tutte le info del gioco
+        Game game = new Game(); // game è l'oggetto che ha tutte le info del gioco
+        game = (Game) Persistenza.recupera(game);
 
-        try (FileReader reader = new FileReader("gioco.json")) {
-
-            game   = gson.fromJson(reader, Game.class);
-
-        } catch (IOException e) {
-
-           e.printStackTrace();
-
-        }
 
         // una volta caricato il gioco, si parte!
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));

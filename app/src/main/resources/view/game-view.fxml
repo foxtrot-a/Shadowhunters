@@ -98,6 +98,7 @@
                               -fx-font-size: 22;
                               -fx-font-weight: bold;"/>
                             <Button fx:id="bt4" text="Stanza principale" onAction="#mossa"/>
+                            <Button fx:id="bt5" text="Nuova Partita" onAction="#mossa" visible="false"/>
 
                         </VBox>
                     </center>

@@ -13,6 +13,10 @@ public class Game {
         this.rooms = rooms;
         this.shadowhunters = shadowhunters;
     }
+
+    public Game(){
+
+    }
     public Shadowhunters getShadowhunters() {
         return shadowhunters;
     }
@@ -95,7 +99,7 @@ private int calcolaDanno(int punteggio1, int punteggio2){
 }
 
 
-private void resetGioco(){
+public void resetGioco(){
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     Game game = null; // game è l'oggetto che ha tutte le info del gioco
     try (FileReader reader = new FileReader("gioco.json")) {

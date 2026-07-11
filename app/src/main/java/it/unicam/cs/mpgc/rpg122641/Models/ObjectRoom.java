@@ -1,11 +1,11 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
-public class Object {
+public class ObjectRoom {
 
     private String name;
     private String immagePath;
     private int scoreIncrements;
 
-    public Object(String name, String immagePath, int scoreIncrements) {
+    public ObjectRoom(String name, String immagePath, int scoreIncrements) {
         this.name = name;
         this.immagePath = immagePath;
         this.scoreIncrements = scoreIncrements;
