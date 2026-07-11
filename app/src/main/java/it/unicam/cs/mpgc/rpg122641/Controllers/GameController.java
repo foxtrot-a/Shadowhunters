@@ -105,6 +105,7 @@ public class GameController {
                 this.back(event);
                 return;
             case 5: this.game.resetGioco();
+                    this.reStart(event);
                 break;
         }
         this.aggiornaEsito(esito);
@@ -185,4 +186,16 @@ public class GameController {
         stage.setScene(new Scene(root, 800, 700));
         stage.show();
     }
+    public void reStart(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
+        Parent root = loader.load();
+        StartController controller = loader.getController();
+        controller.setGame(game); // passiamo l'oggeto gioco che varrà per tutti i controller
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root, 800, 700));
+        stage.show();
+    }
+
+
+
 }
