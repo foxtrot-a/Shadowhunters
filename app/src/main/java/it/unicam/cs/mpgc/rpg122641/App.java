@@ -35,8 +35,8 @@ public class App extends Application {
         Scene scene = new Scene(loader.load(), 600, 700);
 
         StartController controller = loader.getController();
-        controller.setGame(this.inizializzazione(),old); // passiamo l'oggeto gioco che varrà per tutti i controller
-
+        controller.setGame(this.inizializzazione()); // passiamo l'oggeto gioco che varrà per tutti i controller
+        controller.setBtn(old);
         stage.setTitle("Shadowhunters");
         stage.setScene(scene);
         stage.show();

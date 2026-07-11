@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
 
+import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import javafx.event.ActionEvent;
@@ -10,7 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class GuideController {
+public class GuideController implements IController {
     private Game game;
 
     public void setGame (Game game){

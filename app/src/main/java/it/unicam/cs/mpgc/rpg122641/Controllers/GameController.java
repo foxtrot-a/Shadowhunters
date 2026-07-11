@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
 
+import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import javafx.event.ActionEvent;
@@ -18,7 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.List;
 
-public class GameController {
+public class GameController implements IController {
 
     private Game game; // oggetto gioco principale
     private Room room; // anche se posso recuperarlo dal game, uso molte volte tutto il recupero, poco leggibile
@@ -157,6 +158,8 @@ public class GameController {
         else if (room.isDone() && this.scenario == 6 ){
             esitoRoom.setText("Scontro Vinto con il Demone Superiore, Complimenti!");
             this.setImmagineOggetti(getRoomImage(room));
+            this.bt4.setVisible(false);
+            this.bt5.setVisible(true);
         }
     }
 
@@ -194,7 +197,8 @@ public class GameController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
         Parent root = loader.load();
         StartController controller = loader.getController();
-        controller.setGame(game, false); // passiamo l'oggeto gioco che varrà per tutti i controller
+        controller.setGame(game); // passiamo l'oggeto gioco che varrà per tutti i controller
+        controller.setBtn(false);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setOnCloseRequest(e -> {
 

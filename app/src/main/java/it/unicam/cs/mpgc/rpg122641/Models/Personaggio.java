@@ -5,7 +5,6 @@ public abstract  class Personaggio {
     private int difesa;
 
     public Personaggio(int attacco, int difesa) {
-
         this.attacco = attacco;
         this.difesa = difesa;
     }

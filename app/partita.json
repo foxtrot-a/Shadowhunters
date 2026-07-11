@@ -1,6 +1,6 @@
 {
   "shadowhunters": {
-    "attacco": 22,
+    "attacco": 983,
     "difesa": 8
   },
   "rooms": [
@@ -9,8 +9,8 @@
       "name": "Lago",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Raziel",
@@ -18,7 +18,7 @@
         "scoreIncrements": 600
       },
       "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-      "done": false
+      "done": true
     },
     {
       "id": 2,
@@ -57,8 +57,8 @@
       "name": "Istituto",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Coppa",
@@ -66,7 +66,7 @@
         "scoreIncrements": 5
       },
       "text": "L\u0027Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone  e recupera la Coppa!",
-      "done": false
+      "done": true
     },
     {
       "id": 5,
@@ -89,8 +89,8 @@
       "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 400,
-        "difesa": 400
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Alloro",
@@ -98,7 +98,7 @@
         "scoreIncrements": 5
       },
       "text": "Sei d\u0027avanti ad Asmodeo, Principe degli Inferi! SPero che tu abbia evocato l\u0027Angelo, perchè altrimenti sei nei guai!",
-      "done": false
+      "done": true
     },
     {
       "id": 7,

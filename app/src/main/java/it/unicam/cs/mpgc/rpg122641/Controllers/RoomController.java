@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
 
+import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import it.unicam.cs.mpgc.rpg122641.Models.Shadowhunters;
@@ -15,7 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
-public class RoomController{
+public class RoomController implements IController {
     private Game game;
 
     public void setGame (Game game){

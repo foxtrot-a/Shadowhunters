@@ -1,4 +1,5 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
+import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import javafx.fxml.FXML;
@@ -13,11 +14,14 @@ import javafx.scene.control.Button;
 public class StartController {
 private Game game;
 
+
     @FXML
     private Button btnOld;
 
-    public void setGame (Game game, boolean old){
+    public void setGame (Game game){
         this.game = game;
+    }
+    public void setBtn (boolean old){
         btnOld.setVisible(old);
     }
 
