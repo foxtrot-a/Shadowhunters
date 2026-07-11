@@ -1,8 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,9 +21,6 @@ public static Object recupera(Object obj, String path){
 
    return null;
 }
-
-
-
     public static void memorizza(Object obj, String nomeFile){
 
         try (FileWriter writer = new FileWriter(nomeFile)) {
@@ -37,8 +32,4 @@ public static Object recupera(Object obj, String path){
             e.printStackTrace();
         }
     }
-
-
-
-
 }

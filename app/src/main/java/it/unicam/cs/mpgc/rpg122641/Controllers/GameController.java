@@ -104,7 +104,7 @@ public class GameController {
             case 4:
                 this.back(event);
                 return;
-            case 5: this.game.resetGioco();
+            case 5: this.game.resetGioco(this.game);
                     this.reStart(event);
                 break;
         }
@@ -183,6 +183,10 @@ public class GameController {
         RoomController controller = loader.getController();
         controller.setGame(game);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setOnCloseRequest(e -> {
+
+            game.salvaPartita();
+        });
         stage.setScene(new Scene(root, 800, 700));
         stage.show();
     }
@@ -192,6 +196,10 @@ public class GameController {
         StartController controller = loader.getController();
         controller.setGame(game, false); // passiamo l'oggeto gioco che varrà per tutti i controller
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setOnCloseRequest(e -> {
+
+            game.salvaPartita();
+        });
         stage.setScene(new Scene(root, 800, 700));
         stage.show();
     }

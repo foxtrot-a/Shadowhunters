@@ -27,7 +27,7 @@ private Game game;
         Button buttonPremuto = (Button) event.getSource();
 
         if (!buttonPremuto.getId().equals("btnOld")) {
-            this.game.resetGioco();
+            this.game.resetGioco(this.game);
         }
 
         try {

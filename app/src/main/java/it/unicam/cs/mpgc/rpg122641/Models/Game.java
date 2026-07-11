@@ -1,15 +1,12 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Game {
 
     private Shadowhunters shadowhunters;
     private ArrayList<Room> rooms;
-    public Game(Shadowhunters shadowhunters, ArrayList<Room> rooms){
+
+       public Game(Shadowhunters shadowhunters, ArrayList<Room> rooms){
         this.rooms = rooms;
         this.shadowhunters = shadowhunters;
     }
@@ -99,23 +96,32 @@ private int calcolaDanno(int punteggio1, int punteggio2){
 }
 
 
-public void resetGioco(){
-Parametri par = new Parametri();
-par = (Parametri) Persistenza.recupera(par,"gioco.json");
-this.getShadowhunters().setAttacco(par.getShadowhunters().getAttacco());
-this.getShadowhunters().setDifesa(par.getShadowhunters().getDifesa());
+public void resetGioco(Game game){
+//todo: gestire il reset dei valori dei demoni, delle stanze e dello shadw
+    Game template = (Game) Persistenza.recupera(new Game(), "gioco.json");
+
+    game.shadowhunters.setAttacco(template.getShadowhunters().getAttacco());
+    game.shadowhunters.setDifesa(template.getShadowhunters().getDifesa());
+
 for (int i = 0; i < rooms.size(); i++){
-    rooms.get(i).setDone(false);
-    rooms.get(i).getDaemon().setDifesa(par.getRooms().get(i).getDaemon().getDifesa());
-    rooms.get(i).getDaemon().setAttacco(par.getRooms().get(i).getDaemon().getAttacco());
-}
+ game.rooms.get(i).setDone(false);
+ game.rooms.get(i).getDaemon().setDifesa(template.getRooms().get(i).getDaemon().getDifesa());
+ game.rooms.get(i).getDaemon().setAttacco(template.getRooms().get(i).getDaemon().getAttacco());
+ }
 }
 
 
 public void salvaPartita(){
-
         Persistenza.memorizza(this, "partita.json");
+        this.cambiaStato();
+}
 
+
+private  void cambiaStato(){
+    Stato stato= new Stato();
+    Persistenza.recupera(stato,"statoPartita.json");
+    stato.setPartitaSalvata(this.getShadowhunters().isVivo());
+    Persistenza.memorizza(stato,"statoPartita.json" );
 }
 
 }

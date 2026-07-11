@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.rpg122641;
 import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
-import it.unicam.cs.mpgc.rpg122641.Models.Parametri;
+import it.unicam.cs.mpgc.rpg122641.Models.Stato;
 import it.unicam.cs.mpgc.rpg122641.Models.Persistenza;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,8 +14,8 @@ public class App extends Application {
     public Game inizializzazione(){
         // recuperiamo le configurazioni memorizzate del gioco dal file json
         Game game = new Game(); // game è l'oggetto che ha tutte le info del gioco
-        Parametri par = new Parametri();
-        par = (Parametri) Persistenza.recupera(par,"parametri.json");
+        Stato par = new Stato();
+        par = (Stato) Persistenza.recupera(par,"statoPartita.json");
         if (par.isPartitaSalvata()){
             game = (Game) Persistenza.recupera(game,"partita.json"); // recuperiamo i dati della partita precedente
        old =true;

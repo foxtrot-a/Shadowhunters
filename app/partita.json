@@ -1,7 +1,6 @@
 {
   "shadowhunters": {
-    "vita": 0,
-    "attacco": 10,
+    "attacco": 22,
     "difesa": 8
   },
   "rooms": [
@@ -18,7 +17,7 @@
         "immagePath": "Raziel.png",
         "scoreIncrements": 600
       },
-      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perché altrimenti sarebbe un po' inutile essere venuto qui... Perché il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo!",
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
       "done": false
     },
     {
@@ -26,16 +25,16 @@
       "name": "Ossa",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Spada",
         "immagePath": "spada.png",
         "scoreIncrements": 5
       },
-      "text": "Benvenuto nella Città di Ossa. Sconfiggi il demone e recupera la Spada Mortale.",
-      "done": false
+      "text": "Benvenuto nella città Silente conosciuta anche come Città di Ossa, sede dei Fratelli Silenti che proteggono la Spada Mortale, che a te serve! \nI Fratelli al momento sono ostaggio del Demone che vedi. Sconfiggilo e avrai la Spada Mortale!",
+      "done": true
     },
     {
       "id": 3,
@@ -50,7 +49,7 @@
         "immagePath": "stilo.png",
         "scoreIncrements": 5
       },
-      "text": "Le Sorelle di Ferro sono in pericolo. Sconfiggi il demone e ottieni uno Stilo.",
+      "text": "Benvenuto nella Città di Diamante, sede delle Sorelle di Ferro! Le Sorelle sono colore che forgiano le armi Angeliche. Un Demone le sta minacciando. Salvale e avrai un nuovo Stilo per le Rune!\n",
       "done": false
     },
     {
@@ -66,7 +65,7 @@
         "immagePath": "coppa.png",
         "scoreIncrements": 5
       },
-      "text": "L'Istituto è sotto attacco. Recupera la Coppa Mortale.",
+      "text": "L\u0027Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone  e recupera la Coppa!",
       "done": false
     },
     {
@@ -82,7 +81,7 @@
         "immagePath": "runa1.png",
         "scoreIncrements": 5
       },
-      "text": "Libera gli altri Shadowhunters e ottieni una nuova Runa.",
+      "text": "Benvenuto ad Alicante! C\u0027è anche qui un Demone che tiene in ostaggio gli altri Cacciatori! Sconfiggilo e avrai una nuova runa potenziata!",
       "done": false
     },
     {
@@ -98,7 +97,7 @@
         "immagePath": "vittoria.png",
         "scoreIncrements": 5
       },
-      "text": "Affronta Asmodeo, Principe degli Inferi.",
+      "text": "Sei d\u0027avanti ad Asmodeo, Principe degli Inferi! SPero che tu abbia evocato l\u0027Angelo, perchè altrimenti sei nei guai!",
       "done": false
     },
     {
@@ -114,9 +113,8 @@
         "immagePath": "stanza7.png",
         "scoreIncrements": 5
       },
-      "text": "Sconfiggi il demone e ottieni una collana potenziata.",
+      "text": "C\u0027è un demone, combatti e avrai una collana potenziata dall\u0027Angelo!",
       "done": false
     }
-  ],
-  "partitaSalvata": false
+  ]
 }
