@@ -1,0 +1,122 @@
+{
+  "shadowhunters": {
+    "vita": 0,
+    "attacco": 10,
+    "difesa": 8
+  },
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Lago",
+      "daemon": {
+        "demoneSuperiore": false,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {
+        "name": "Raziel",
+        "immagePath": "Raziel.png",
+        "scoreIncrements": 600
+      },
+      "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perché altrimenti sarebbe un po' inutile essere venuto qui... Perché il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo!",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Ossa",
+      "daemon": {
+        "demoneSuperiore": false,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {
+        "name": "Spada",
+        "immagePath": "spada.png",
+        "scoreIncrements": 5
+      },
+      "text": "Benvenuto nella Città di Ossa. Sconfiggi il demone e recupera la Spada Mortale.",
+      "done": false
+    },
+    {
+      "id": 3,
+      "name": "Città di Diamante",
+      "daemon": {
+        "demoneSuperiore": false,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {
+        "name": "Stilo",
+        "immagePath": "stilo.png",
+        "scoreIncrements": 5
+      },
+      "text": "Le Sorelle di Ferro sono in pericolo. Sconfiggi il demone e ottieni uno Stilo.",
+      "done": false
+    },
+    {
+      "id": 4,
+      "name": "Istituto",
+      "daemon": {
+        "demoneSuperiore": false,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {
+        "name": "Coppa",
+        "immagePath": "coppa.png",
+        "scoreIncrements": 5
+      },
+      "text": "L'Istituto è sotto attacco. Recupera la Coppa Mortale.",
+      "done": false
+    },
+    {
+      "id": 5,
+      "name": "Alicante",
+      "daemon": {
+        "demoneSuperiore": false,
+        "attacco": 5,
+        "difesa": 3
+      },
+      "object": {
+        "name": "Runa",
+        "immagePath": "runa1.png",
+        "scoreIncrements": 5
+      },
+      "text": "Libera gli altri Shadowhunters e ottieni una nuova Runa.",
+      "done": false
+    },
+    {
+      "id": 6,
+      "name": "Casa1",
+      "daemon": {
+        "demoneSuperiore": true,
+        "attacco": 400,
+        "difesa": 400
+      },
+      "object": {
+        "name": "Alloro",
+        "immagePath": "vittoria.png",
+        "scoreIncrements": 5
+      },
+      "text": "Affronta Asmodeo, Principe degli Inferi.",
+      "done": false
+    },
+    {
+      "id": 7,
+      "name": "Casa2",
+      "daemon": {
+        "demoneSuperiore": false,
+        "attacco": 700,
+        "difesa": 3
+      },
+      "object": {
+        "name": "Collana",
+        "immagePath": "stanza7.png",
+        "scoreIncrements": 5
+      },
+      "text": "Sconfiggi il demone e ottieni una collana potenziata.",
+      "done": false
+    }
+  ],
+  "partitaSalvata": false
+}

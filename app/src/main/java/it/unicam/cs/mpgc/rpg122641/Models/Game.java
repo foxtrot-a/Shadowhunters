@@ -101,19 +101,21 @@ private int calcolaDanno(int punteggio1, int punteggio2){
 
 public void resetGioco(){
 Parametri par = new Parametri();
-par = (Parametri) Persistenza.recupera(par);
-this.getShadowhunters().setAttacco(par.shadowhunters.getAttacco());
-this.getShadowhunters().setDifesa(par.shadowhunters.getDifesa());
+par = (Parametri) Persistenza.recupera(par,"gioco.json");
+this.getShadowhunters().setAttacco(par.getShadowhunters().getAttacco());
+this.getShadowhunters().setDifesa(par.getShadowhunters().getDifesa());
 for (int i = 0; i < rooms.size(); i++){
     rooms.get(i).setDone(false);
-    rooms.get(i).getDaemon().setDifesa(par.rooms.get(i).getDaemon().getDifesa());
-    rooms.get(i).getDaemon().setAttacco(par.rooms.get(i).getDaemon().getAttacco());
+    rooms.get(i).getDaemon().setDifesa(par.getRooms().get(i).getDaemon().getDifesa());
+    rooms.get(i).getDaemon().setAttacco(par.getRooms().get(i).getDaemon().getAttacco());
 }
 }
 
 
 public void salvaPartita(){
-        Persistenza.memorizza(this, "partita");
+
+        Persistenza.memorizza(this, "partita.json");
+
 }
 
 }

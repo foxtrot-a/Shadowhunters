@@ -1,24 +1,32 @@
 package it.unicam.cs.mpgc.rpg122641;
 import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
+import it.unicam.cs.mpgc.rpg122641.Models.Parametri;
 import it.unicam.cs.mpgc.rpg122641.Models.Persistenza;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import java.io.FileReader;
-import java.io.IOException;
-
 public class App extends Application {
+
+    private static boolean old;
+
+    public Game inizializzazione(){
+        // recuperiamo le configurazioni memorizzate del gioco dal file json
+        Game game = new Game(); // game è l'oggetto che ha tutte le info del gioco
+        Parametri par = new Parametri();
+        par = (Parametri) Persistenza.recupera(par,"parametri.json");
+        if (par.isPartitaSalvata()){
+            game = (Game) Persistenza.recupera(game,"partita.json"); // recuperiamo i dati della partita precedente
+       old =true;
+        }else{
+            game = (Game) Persistenza.recupera(game,"gioco.json");  // partita nuova
+        }
+        return game;
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
-        // recuperiamo le configurazioni memorizzate del gioco dal file json
-
-        Game game = new Game(); // game è l'oggetto che ha tutte le info del gioco
-        game = (Game) Persistenza.recupera(game);
 
 
         // una volta caricato il gioco, si parte!
@@ -27,7 +35,7 @@ public class App extends Application {
         Scene scene = new Scene(loader.load(), 600, 700);
 
         StartController controller = loader.getController();
-        controller.setGame(game); // passiamo l'oggeto gioco che varrà per tutti i controller
+        controller.setGame(this.inizializzazione(),old); // passiamo l'oggeto gioco che varrà per tutti i controller
 
         stage.setTitle("Shadowhunters");
         stage.setScene(scene);
@@ -35,6 +43,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        old = false;
         launch();
     }
 }

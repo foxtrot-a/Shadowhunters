@@ -8,16 +8,27 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 
 public class StartController {
 private Game game;
 
-    public void setGame (Game game){
+    @FXML
+    private Button btnOld;
+
+    public void setGame (Game game, boolean old){
         this.game = game;
+        btnOld.setVisible(old);
     }
 
     @FXML
     private void goToGame(ActionEvent event) {
+
+        Button buttonPremuto = (Button) event.getSource();
+
+        if (!buttonPremuto.getId().equals("btnOld")) {
+            this.game.resetGioco();
+        }
 
         try {
 
@@ -29,6 +40,11 @@ private Game game;
             controller.setGame(game);
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stage.setOnCloseRequest(e -> {
+
+                game.salvaPartita();
+            });
 
             stage.setScene(new Scene(root,800,700));
             stage.show();

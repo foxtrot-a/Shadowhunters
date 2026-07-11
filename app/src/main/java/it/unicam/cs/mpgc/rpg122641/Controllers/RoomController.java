@@ -42,6 +42,12 @@ public class RoomController{
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root,800,700));
 
+            stage.setOnCloseRequest(e -> {
+
+                game.salvaPartita();
+            });
+
+
             stage.show();
 
         } catch (Exception e) {

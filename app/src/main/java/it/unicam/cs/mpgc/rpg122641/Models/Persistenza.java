@@ -9,9 +9,9 @@ import java.io.IOException;
 
 public class Persistenza {
    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
-public static Object recupera(Object obj){
+public static Object recupera(Object obj, String path){
 
-    try (FileReader reader = new FileReader("gioco.json")) {
+    try (FileReader reader = new FileReader(path)) {
 
         return gson.fromJson(reader, obj.getClass());
 

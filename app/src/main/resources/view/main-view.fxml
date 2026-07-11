@@ -24,11 +24,15 @@
         <Label text="Cacciatori di Demoni"
                style="-fx-text-fill: #cccccc; -fx-font-size: 16;"/>
 
-        <Button text="INIZIA"
+        <Button text="INIZIA" fx:id="btnNew"
                 prefWidth="200"
                 style="-fx-font-size: 18; -fx-background-color: green;"
                 onAction="#goToGame"/>
 
+        <Button text="Riprendi partita" fx:id="btnOld"
+                prefWidth="200"
+                style="-fx-font-size: 18; -fx-background-color: green;"
+                onAction="#goToGame" visible="false"/>
     </VBox>
 
 </StackPane>
