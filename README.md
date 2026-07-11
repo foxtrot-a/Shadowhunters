@@ -1,7 +1,6 @@
-# 📌 Nome del Progetto
+# 📌 Shadowhunters
 
-Breve descrizione del progetto (2-3 righe):  
-Spiega cosa fa il programma e a cosa serve.
+Il programma è un gioco di ruolo, dove il giocatore, è uno Shadowhunters, che deve sconfiggere i demoni che si presentano sul suo cammino, per recupera degli oggetti del mondo Shadowhunters, per poi sconfiggere un Demone Superiore, se avrà abbastanza punteggio.
 
 ---
 
@@ -32,43 +31,8 @@ cd <nome-cartella>
 
 ## 🤖 Uso di strumenti di AI
 
-Indicare **se e come** sono stati utilizzati strumenti di AI (es. ChatGPT, Copilot, ecc.).
-Descrivere in modo chiaro **per quali attività** e **con quale livello di intervento personale**.
-
-È importante dimostrare che:
-* il codice è stato **compreso**
-* l’AI è stata usata come **supporto**, non come sostituto
----
-
-📌 Per una descrizione più dettagliata dell’uso dell’AI, utilizzare la **Wiki del repository**.
-
-
-### Esempi :
-
 * Utilizzato ChatGPT per:
+* - comprendere cosa fosse un RPG;
+  - perfezionamento dei file FXML, per rendere pià accattivante l'ambientazione;
+  - comprendere qualche errore di compilazione.
 
-  * comprendere concetti teorici (es. differenza tra classi e oggetti)
-  * chiarire errori di compilazione
-  * suggerimenti su struttura del codice
-
-* Utilizzato Copilot per:
-
-  * autocompletamento di metodi semplici
-  * generazione di codice ripetitivo (es. getter/setter)
-
-* Utilizzato ChatGPT per generare una prima versione di una funzione, poi:
-
-  * modificata e adattata manualmente
-  * testata e corretta personalmente
-
----
-
-Oppure:
-- Non sono stati utilizzati strumenti di AI
-
----
-
-
-## ⚠️ Nota
-
-Questo è un template: **modificare e adattare tutte le parti necessarie** in base al proprio progetto
