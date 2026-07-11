@@ -1,7 +1,7 @@
 {
   "shadowhunters": {
-    "attacco": 382,
-    "difesa": -10
+    "attacco": 22,
+    "difesa": 8
   },
   "rooms": [
     {
@@ -9,8 +9,8 @@
       "name": "Lago",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 20,
+        "difesa": 18
       },
       "object": {
         "name": "Raziel",
@@ -41,8 +41,8 @@
       "name": "Città di Diamante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Stilo",
@@ -50,15 +50,15 @@
         "scoreIncrements": 5
       },
       "text": "Benvenuto nella Città di Diamante, sede delle Sorelle di Ferro! Le Sorelle sono colore che forgiano le armi Angeliche. Un Demone le sta minacciando. Salvale e avrai un nuovo Stilo per le Rune!\n",
-      "done": true
+      "done": false
     },
     {
       "id": 4,
       "name": "Istituto",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Coppa",
@@ -66,15 +66,15 @@
         "scoreIncrements": 5
       },
       "text": "L\u0027Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone  e recupera la Coppa!",
-      "done": true
+      "done": false
     },
     {
       "id": 5,
       "name": "Alicante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Runa",
@@ -82,14 +82,14 @@
         "scoreIncrements": 5
       },
       "text": "Benvenuto ad Alicante! C\u0027è anche qui un Demone che tiene in ostaggio gli altri Cacciatori! Sconfiggilo e avrai una nuova runa potenziata!",
-      "done": true
+      "done": false
     },
     {
       "id": 6,
       "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 382,
+        "attacco": 400,
         "difesa": 400
       },
       "object": {
@@ -105,8 +105,8 @@
       "name": "Casa2",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 700,
+        "difesa": 3
       },
       "object": {
         "name": "Collana",
@@ -114,7 +114,7 @@
         "scoreIncrements": 5
       },
       "text": "C\u0027è un demone, combatti e avrai una collana potenziata dall\u0027Angelo!",
-      "done": true
+      "done": false
     }
   ]
 }

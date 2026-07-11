@@ -90,26 +90,20 @@ public class GameController implements IController {
     @FXML
     private void mossa(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
-        boolean esito = false;
         int scelta = Integer.parseInt(button.getId().substring(2));
         switch (scelta) {
             case 1:// attacca
-                esito = this.game.mossa(this.scenario,scelta);
-                break;
             case 2: //difendi
-                esito = this.game.mossa(this.scenario,scelta);
-                break;
             case 3: //fuggi
-                esito = this.game.mossa(this.scenario,scelta);
+                this.aggiornaEsito(this.game.mossa(this.scenario,scelta)); // uguale per tutti e tre
                 break;
             case 4:
                 this.back(event);
-                return;
+                break;
             case 5: this.game.resetGioco(this.game);
                     this.reStart(event);
                 break;
         }
-        this.aggiornaEsito(esito);
     }
 
     private void setImmagineOggetti(Image image){
