@@ -1,7 +1,7 @@
 {
   "shadowhunters": {
-    "attacco": 10,
-    "difesa": 8
+    "attacco": 382,
+    "difesa": -10
   },
   "rooms": [
     {
@@ -25,8 +25,8 @@
       "name": "Ossa",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Spada",
@@ -34,15 +34,15 @@
         "scoreIncrements": 5
       },
       "text": "Benvenuto nella città Silente conosciuta anche come Città di Ossa, sede dei Fratelli Silenti che proteggono la Spada Mortale, che a te serve! \nI Fratelli al momento sono ostaggio del Demone che vedi. Sconfiggilo e avrai la Spada Mortale!",
-      "done": false
+      "done": true
     },
     {
       "id": 3,
       "name": "Città di Diamante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Stilo",
@@ -50,15 +50,15 @@
         "scoreIncrements": 5
       },
       "text": "Benvenuto nella Città di Diamante, sede delle Sorelle di Ferro! Le Sorelle sono colore che forgiano le armi Angeliche. Un Demone le sta minacciando. Salvale e avrai un nuovo Stilo per le Rune!\n",
-      "done": false
+      "done": true
     },
     {
       "id": 4,
       "name": "Istituto",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Coppa",
@@ -66,15 +66,15 @@
         "scoreIncrements": 5
       },
       "text": "L\u0027Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone  e recupera la Coppa!",
-      "done": false
+      "done": true
     },
     {
       "id": 5,
       "name": "Alicante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Runa",
@@ -82,14 +82,14 @@
         "scoreIncrements": 5
       },
       "text": "Benvenuto ad Alicante! C\u0027è anche qui un Demone che tiene in ostaggio gli altri Cacciatori! Sconfiggilo e avrai una nuova runa potenziata!",
-      "done": false
+      "done": true
     },
     {
       "id": 6,
       "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 400,
+        "attacco": 382,
         "difesa": 400
       },
       "object": {
@@ -105,8 +105,8 @@
       "name": "Casa2",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 700,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Collana",
@@ -114,7 +114,7 @@
         "scoreIncrements": 5
       },
       "text": "C\u0027è un demone, combatti e avrai una collana potenziata dall\u0027Angelo!",
-      "done": false
+      "done": true
     }
   ]
 }

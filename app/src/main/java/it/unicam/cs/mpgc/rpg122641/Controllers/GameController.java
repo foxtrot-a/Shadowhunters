@@ -94,13 +94,13 @@ public class GameController implements IController {
         int scelta = Integer.parseInt(button.getId().substring(2));
         switch (scelta) {
             case 1:// attacca
-                esito = this.game.mossa(this.game.getShadowhunters().getAttacco(), this.room.getDaemon().getDifesa(),this.scenario,scelta);
+                esito = this.game.mossa(this.scenario,scelta);
                 break;
             case 2: //difendi
-                esito = this.game.mossa(this.game.getShadowhunters().getDifesa(), this.room.getDaemon().getAttacco(),this.scenario,scelta);
+                esito = this.game.mossa(this.scenario,scelta);
                 break;
             case 3: //fuggi
-                esito = this.game.mossa(1,1,this.scenario,scelta);
+                esito = this.game.mossa(this.scenario,scelta);
                 break;
             case 4:
                 this.back(event);

@@ -23,8 +23,19 @@ public class Game {
     }
 
     // logica del gioco per combattimenti
-    public boolean mossa(int var1, int var2, int scenario, int scelta){
-        int danno = this.calcolaDanno(var1,var2);
+    public boolean mossa(int scenario, int scelta){
+        int danno = 0;
+        switch (scelta) {
+            case 1:// attacca
+                danno = this.calcolaDanno(this.getShadowhunters().getAttacco(), this.getRooms().get(scenario-1).getDaemon().getDifesa());
+                break;
+            case 2: //difendi
+                danno = this.calcolaDanno(this.getShadowhunters().getDifesa(), this.getRooms().get(scenario-1).getDaemon().getAttacco());
+                break;
+            case 3: //fuggi
+                danno = this.calcolaDanno(1,1);
+                break;
+        }
         if (scenario == 1){
             return this.stanzaUno(scenario, scelta, danno);
         }else{
