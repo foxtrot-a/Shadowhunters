@@ -62,6 +62,7 @@ public class Game {
     }
 
     private void gestisciSconfitta(Daemon daemon, Room room, int scelta, int danno){
+           System.out.println(scelta);
         switch (scelta){
             case 1:  daemon.setAttacco(daemon.getAttacco() + danno);
                     shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
@@ -70,8 +71,8 @@ public class Game {
                     shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
                 break;
             case 3:
-                shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
-                shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
+                shadowhunters.setAttacco(shadowhunters.getAttacco() -2);
+                shadowhunters.setDifesa(shadowhunters.getDifesa() -2 );
                 break;
         }
     }

@@ -1,6 +1,6 @@
 {
   "shadowhunters": {
-    "attacco": 983,
+    "attacco": 10,
     "difesa": 8
   },
   "rooms": [
@@ -9,8 +9,8 @@
       "name": "Lago",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Raziel",
@@ -18,15 +18,15 @@
         "scoreIncrements": 600
       },
       "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-      "done": true
+      "done": false
     },
     {
       "id": 2,
       "name": "Ossa",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Spada",
@@ -34,7 +34,7 @@
         "scoreIncrements": 5
       },
       "text": "Benvenuto nella città Silente conosciuta anche come Città di Ossa, sede dei Fratelli Silenti che proteggono la Spada Mortale, che a te serve! \nI Fratelli al momento sono ostaggio del Demone che vedi. Sconfiggilo e avrai la Spada Mortale!",
-      "done": true
+      "done": false
     },
     {
       "id": 3,
@@ -57,8 +57,8 @@
       "name": "Istituto",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Coppa",
@@ -66,7 +66,7 @@
         "scoreIncrements": 5
       },
       "text": "L\u0027Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone  e recupera la Coppa!",
-      "done": true
+      "done": false
     },
     {
       "id": 5,
@@ -89,8 +89,8 @@
       "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 400,
+        "difesa": 400
       },
       "object": {
         "name": "Alloro",
@@ -98,7 +98,7 @@
         "scoreIncrements": 5
       },
       "text": "Sei d\u0027avanti ad Asmodeo, Principe degli Inferi! SPero che tu abbia evocato l\u0027Angelo, perchè altrimenti sei nei guai!",
-      "done": true
+      "done": false
     },
     {
       "id": 7,

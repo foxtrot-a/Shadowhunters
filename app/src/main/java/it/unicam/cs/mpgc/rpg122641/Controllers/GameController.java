@@ -100,7 +100,7 @@ public class GameController implements IController {
                 esito = this.game.mossa(this.game.getShadowhunters().getDifesa(), this.room.getDaemon().getAttacco(),this.scenario,scelta);
                 break;
             case 3: //fuggi
-                esito = this.game.mossa(this.room.getDaemon().getDifesa(), this.game.getShadowhunters().getAttacco(),this.scenario,scelta);
+                esito = this.game.mossa(1,1,this.scenario,scelta);
                 break;
             case 4:
                 this.back(event);
@@ -141,6 +141,7 @@ public class GameController implements IController {
         }else{// se abbiamo perso
             this.gestisciSconfitta();
         }
+        this.setLabel();
     }
 
     private Image getRoomImage(Room room) {
@@ -170,7 +171,7 @@ public class GameController implements IController {
             bt4.setVisible(false);
             bt5.setVisible(true);
         }else if (this.game.getShadowhunters().isVivo()) {
-            esitoRoom.setText("Hai perso lo scontro, ma torna indietro e rimettiti in forze!");
+            esitoRoom.setText("Hai perso lo scontro o sei fuggito, torna indietro e rimettiti in forze!");
             bt4.setVisible(true);
         }else{
             esitoRoom.setText("Game Over!");
@@ -207,7 +208,5 @@ public class GameController implements IController {
         stage.setScene(new Scene(root, 800, 700));
         stage.show();
     }
-
-
 
 }
