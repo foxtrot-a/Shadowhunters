@@ -5,7 +5,6 @@ public class Room {
     private String name; // nome del luogo
     private Daemon daemon; // demone presente nella stanza
     private ObjectRoom object; // oggetto magico che si recupera nella stanza se si uccide il demone
-    private  String text; // testo per la storia narrativa
 
     private boolean done; // serve per sapere se la stanza è stata superata
 
@@ -14,7 +13,6 @@ public class Room {
         this.name = name;
         this.daemon = daemon;
         this.object = object;
-        this.text = text;
         this.done = false; // mettiamo a false il fatto che la stanza è già stata superata
     }
 
@@ -32,10 +30,6 @@ public class Room {
 
     public ObjectRoom getObject() {
         return object;
-    }
-
-    public String getText() {
-        return text;
     }
 
     public boolean isDone() {

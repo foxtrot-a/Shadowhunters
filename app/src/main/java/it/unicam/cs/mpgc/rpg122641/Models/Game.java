@@ -6,6 +6,7 @@ public class Game {
     private Shadowhunters shadowhunters;
     private ArrayList<Room> rooms;
 
+
        public Game(Shadowhunters shadowhunters, ArrayList<Room> rooms){
         this.rooms = rooms;
         this.shadowhunters = shadowhunters;

@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
 
+import it.unicam.cs.mpgc.rpg122641.App;
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
@@ -67,7 +68,7 @@ public class GameController implements IController {
     public void setGame (Game game){ //quando passiamo l'oggetto gioco, settiamo anche le varie label che ci servono
         this.game = game;
         this.room = game.getRooms().get(scenario-1);
-        pp.setText(this.room.getText());     // inseriamo il testo nella parte bianca
+        pp.setText(App.getInstance().getTesti().findByIdAndTipo(room.getId(), 'a').getTesto());     // inseriamo il testo nella parte bianca
         this.setLabel();
         game.getRooms().stream().filter(Room::isDone).map(this::getRoomImage).forEach(this::setImmagineOggetti);
         if (room.isDone()){

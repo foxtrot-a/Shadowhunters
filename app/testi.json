@@ -1,0 +1,39 @@
+{
+  "testi": [
+    {
+      "id": 1,
+      "tipo": "a",
+      "testo": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po' inutile essere venuto qui... Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l'altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?"
+    },
+    {
+      "id": 2,
+      "tipo": "a",
+      "testo": "Benvenuto nella città Silente conosciuta anche come Città di Ossa, sede dei Fratelli Silenti che proteggono la Spada Mortale, che a te serve!\nI Fratelli al momento sono ostaggio del Demone che vedi. Sconfiggilo e avrai la Spada Mortale!"
+    },
+    {
+      "id": 3,
+      "tipo": "a",
+      "testo": "Benvenuto nella Città di Diamante, sede delle Sorelle di Ferro! Le Sorelle sono coloro che forgiano le armi Angeliche. Un Demone le sta minacciando. Salvale e avrai un nuovo Stilo per le Rune!\n"
+    },
+    {
+      "id": 4,
+      "tipo": "a",
+      "testo": "L'Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone e recupera la Coppa!"
+    },
+    {
+      "id": 5,
+      "tipo": "a",
+      "testo": "Benvenuto ad Alicante! C'è anche qui un Demone che tiene in ostaggio gli altri Cacciatori! Sconfiggilo e avrai una nuova runa potenziata!"
+    },
+    {
+      "id": 6,
+      "tipo": "a",
+      "testo": "Sei d'avanti ad Asmodeo, Principe degli Inferi! Spero che tu abbia evocato l'Angelo, perchè altrimenti sei nei guai!"
+    },
+    {
+      "id": 7,
+      "tipo": "a",
+      "testo": "C'è un demone, combatti e avrai una collana potenziata dall'Angelo!"
+    }
+  ]
+}
