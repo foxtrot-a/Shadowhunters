@@ -1,6 +1,6 @@
 {
   "shadowhunters": {
-    "attacco": 22,
+    "attacco": 780,
     "difesa": 8
   },
   "rooms": [
@@ -9,8 +9,8 @@
       "name": "Lago",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 20,
-        "difesa": 18
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Raziel",
@@ -18,7 +18,7 @@
         "scoreIncrements": 600
       },
       "text": "Benvenuto al Lago! Spero che tu abbia con te gli altri due Strumenti Mortali, perchè altrimenti sarebbe un po\u0027 inutile essere venuto qui...   Perchè il Lago è lo Specchio, il terzo Dono di Raziel, dove tra l\u0027altro potrai evocarlo! Comunque adesso che fai? Ti difendi, Attacchi il Demone qui presente o...Scappi?",
-      "done": false
+      "done": true
     },
     {
       "id": 2,
@@ -41,8 +41,8 @@
       "name": "Città di Diamante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Stilo",
@@ -50,15 +50,15 @@
         "scoreIncrements": 5
       },
       "text": "Benvenuto nella Città di Diamante, sede delle Sorelle di Ferro! Le Sorelle sono colore che forgiano le armi Angeliche. Un Demone le sta minacciando. Salvale e avrai un nuovo Stilo per le Rune!\n",
-      "done": false
+      "done": true
     },
     {
       "id": 4,
       "name": "Istituto",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Coppa",
@@ -66,7 +66,7 @@
         "scoreIncrements": 5
       },
       "text": "L\u0027Istituto è sotto attacco perchè ha la Coppa Mortale! Sconfiggi il demone  e recupera la Coppa!",
-      "done": false
+      "done": true
     },
     {
       "id": 5,
