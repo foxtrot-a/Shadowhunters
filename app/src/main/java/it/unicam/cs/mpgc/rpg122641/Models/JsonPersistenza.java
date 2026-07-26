@@ -3,7 +3,7 @@ package it.unicam.cs.mpgc.rpg122641.Models;
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IPersistenza;
 import it.unicam.cs.mpgc.rpg122641.Utils.Persistenza;
 
-public class JsonPeristenza implements IPersistenza {
+public class JsonPersistenza implements IPersistenza {
 
 @Override
     public void salva(Game game) {

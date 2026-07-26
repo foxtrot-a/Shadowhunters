@@ -28,7 +28,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
 
         game = loadGame();
-        game.setRepository(new JsonPeristenza());
+        game.setRepository(new JsonPersistenza());
         game.setCalcolatorePunteggio(new CalcolatorePunteggio());
         testi = loadTesti();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));

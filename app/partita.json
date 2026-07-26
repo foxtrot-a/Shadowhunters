@@ -1,7 +1,7 @@
 {
   "shadowhunters": {
-    "attacco": 52,
-    "difesa": 14
+    "attacco": 10,
+    "difesa": 8
   },
   "rooms": [
     {
@@ -24,30 +24,30 @@
       "name": "Ossa",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Spada",
         "immagePath": "spada.png",
         "scoreIncrements": 5
       },
-      "done": true
+      "done": false
     },
     {
       "id": 3,
       "name": "Città di Diamante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Stilo",
         "immagePath": "stilo.png",
         "scoreIncrements": 5
       },
-      "done": true
+      "done": false
     },
     {
       "id": 4,
