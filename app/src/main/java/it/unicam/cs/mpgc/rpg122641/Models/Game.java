@@ -29,7 +29,7 @@ public class Game {
                                                              this.getRooms().get(scenario-1),
                                                              this.shadowhunters,
                                                              this.getRooms().get(scenario-1).getDaemon(),
-                                                             azione)); //todo da sostiutire azione
+                                                             azione));
 
         if (scenario == 1){
             return this.stanzaUno(scenario, azione, danno);
@@ -77,8 +77,8 @@ public class Game {
                     shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
                 break;
             case FUGGI:
-                shadowhunters.setAttacco(shadowhunters.getAttacco() - danno);
-                shadowhunters.setDifesa(shadowhunters.getDifesa() - danno );
+                shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
+                shadowhunters.setDifesa(shadowhunters.getDifesa() + danno );
                 break;
         }
     }

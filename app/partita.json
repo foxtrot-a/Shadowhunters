@@ -1,7 +1,7 @@
 {
   "shadowhunters": {
-    "attacco": 22,
-    "difesa": 27
+    "attacco": 52,
+    "difesa": 14
   },
   "rooms": [
     {
@@ -39,45 +39,45 @@
       "name": "Città di Diamante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Stilo",
         "immagePath": "stilo.png",
         "scoreIncrements": 5
       },
-      "done": false
+      "done": true
     },
     {
       "id": 4,
       "name": "Istituto",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Coppa",
         "immagePath": "coppa.png",
         "scoreIncrements": 5
       },
-      "done": true
+      "done": false
     },
     {
       "id": 5,
       "name": "Alicante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 0,
-        "difesa": 0
+        "attacco": 5,
+        "difesa": 3
       },
       "object": {
         "name": "Runa",
         "immagePath": "runa1.png",
         "scoreIncrements": 5
       },
-      "done": true
+      "done": false
     },
     {
       "id": 6,
