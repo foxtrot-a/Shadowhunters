@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
 
+import it.unicam.cs.mpgc.rpg122641.App;
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
@@ -44,8 +45,8 @@ public class RoomController implements IController {
             stage.setScene(new Scene(root,800,700));
 
             stage.setOnCloseRequest(e -> {
-
-                game.salvaPartita();
+                App.getInstance().getGestore().salvaPartita(game);
+               // game.salvaPartita();
             });
 
 

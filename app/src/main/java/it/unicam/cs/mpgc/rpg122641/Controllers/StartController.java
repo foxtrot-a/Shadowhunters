@@ -1,4 +1,5 @@
 package it.unicam.cs.mpgc.rpg122641.Controllers;
+import it.unicam.cs.mpgc.rpg122641.App;
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
@@ -31,7 +32,8 @@ private Game game;
         Button buttonPremuto = (Button) event.getSource();
 
         if (!buttonPremuto.getId().equals("btnOld")) {
-            this.game.resetGioco(this.game);
+            //this.game.resetGioco(this.game);
+            App.getInstance().getGestore().resetPartita(this.game);
         }
 
         try {
@@ -46,8 +48,8 @@ private Game game;
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             stage.setOnCloseRequest(e -> {
-
-                game.salvaPartita();
+                App.getInstance().getGestore().salvaPartita(game);
+              //  game.salvaPartita();
             });
 
             stage.setScene(new Scene(root,800,700));

@@ -103,7 +103,8 @@ public class GameController implements IController {
             case 4:
                 this.back(event);
                 break;
-            case 5: this.game.resetGioco(this.game);
+            case 5:   // this.game.resetGioco(this.game);
+                   App.getInstance().getGestore().resetPartita(this.game);
                     this.reStart(event);
                 break;
         }
@@ -198,8 +199,8 @@ public class GameController implements IController {
         controller.setGame(game);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setOnCloseRequest(e -> {
-
-            game.salvaPartita();
+            App.getInstance().getGestore().salvaPartita(game);
+           // game.salvaPartita();
         });
         stage.setScene(new Scene(root, 800, 700));
         stage.show();
@@ -212,8 +213,8 @@ public class GameController implements IController {
         controller.setBtn(false);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setOnCloseRequest(e -> {
-
-            game.salvaPartita();
+            App.getInstance().getGestore().salvaPartita(game);
+            //game.salvaPartita();
         });
         stage.setScene(new Scene(root, 800, 700));
         stage.show();

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Game {
     private Shadowhunters shadowhunters;
     private ArrayList<Room> rooms;
-    private transient IPersistenza repository;
     private transient ICalcolaPunteggio calcolatorePunteggio;
 
     public Game(Shadowhunters shadowhunters, ArrayList<Room> rooms){
@@ -99,34 +98,20 @@ return  false;
 }
 
 
-public void resetGioco(Game game){
-    Game template = repository.caricaTemplate();
-    game.shadowhunters.setAttacco(template.getShadowhunters().getAttacco());
-    game.shadowhunters.setDifesa(template.getShadowhunters().getDifesa());
+public void resetGioco(Game template){
+//    Game template = repository.caricaTemplate();
+    shadowhunters.setAttacco(template.getShadowhunters().getAttacco());
+    shadowhunters.setDifesa(template.getShadowhunters().getDifesa());
 
     for (int i = 0; i < rooms.size(); i++){
-     game.rooms.get(i).setDone(false);
-     game.rooms.get(i).getDaemon().setDifesa(template.getRooms().get(i).getDaemon().getDifesa());
-     game.rooms.get(i).getDaemon().setAttacco(template.getRooms().get(i).getDaemon().getAttacco());
+     rooms.get(i).setDone(false);
+     rooms.get(i).getDaemon().setDifesa(template.getRooms().get(i).getDaemon().getDifesa());
+     rooms.get(i).getDaemon().setAttacco(template.getRooms().get(i).getDaemon().getAttacco());
      }
 }
-
-    public void salvaPartita(){
-        repository.salva(this);
-        cambiaStato();
-    }
-
-    private void cambiaStato(){
-        Stato stato = repository.caricaStato();
-        stato.setPartitaSalvata(this.getShadowhunters().isVivo());
-        repository.salvaStato(stato);
-    }
-    public void setRepository(IPersistenza repository) {
-        this.repository = repository;
-    }
-
     public void setCalcolatorePunteggio(ICalcolaPunteggio calcolatorePunteggio) {
         this.calcolatorePunteggio = calcolatorePunteggio;
     }
+
 
 }
