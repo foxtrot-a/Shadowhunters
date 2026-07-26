@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg122641;
 import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
 import it.unicam.cs.mpgc.rpg122641.Models.*;
+import it.unicam.cs.mpgc.rpg122641.Utils.Persistenza;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,6 +28,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
 
         game = loadGame();
+        game.setRepository(new JsonPeristenza());
         testi = loadTesti();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
         Scene scene = new Scene(loader.load(), 600, 700);

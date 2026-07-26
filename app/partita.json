@@ -1,6 +1,6 @@
 {
   "shadowhunters": {
-    "attacco": 10,
+    "attacco": 22,
     "difesa": 8
   },
   "rooms": [
@@ -69,15 +69,15 @@
       "name": "Alicante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Runa",
         "immagePath": "runa1.png",
         "scoreIncrements": 5
       },
-      "done": false
+      "done": true
     },
     {
       "id": 6,

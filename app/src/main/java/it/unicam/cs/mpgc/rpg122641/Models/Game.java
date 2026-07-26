@@ -1,13 +1,16 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
+import it.unicam.cs.mpgc.rpg122641.Interfaces.IPersistenza;
+
 import java.util.ArrayList;
 
 public class Game {
 
     private Shadowhunters shadowhunters;
     private ArrayList<Room> rooms;
+    private transient IPersistenza repository;
 
 
-       public Game(Shadowhunters shadowhunters, ArrayList<Room> rooms){
+    public Game(Shadowhunters shadowhunters, ArrayList<Room> rooms){
         this.rooms = rooms;
         this.shadowhunters = shadowhunters;
     }
@@ -110,31 +113,29 @@ private int calcolaDanno(int punteggio1, int punteggio2){
 
 
 public void resetGioco(Game game){
-//todo: gestire il reset dei valori dei demoni, delle stanze e dello shadw
-    Game template = (Game) Persistenza.recupera(new Game(), "gioco.json");
-
+    Game template = repository.caricaTemplate();
     game.shadowhunters.setAttacco(template.getShadowhunters().getAttacco());
     game.shadowhunters.setDifesa(template.getShadowhunters().getDifesa());
 
-for (int i = 0; i < rooms.size(); i++){
- game.rooms.get(i).setDone(false);
- game.rooms.get(i).getDaemon().setDifesa(template.getRooms().get(i).getDaemon().getDifesa());
- game.rooms.get(i).getDaemon().setAttacco(template.getRooms().get(i).getDaemon().getAttacco());
- }
+    for (int i = 0; i < rooms.size(); i++){
+     game.rooms.get(i).setDone(false);
+     game.rooms.get(i).getDaemon().setDifesa(template.getRooms().get(i).getDaemon().getDifesa());
+     game.rooms.get(i).getDaemon().setAttacco(template.getRooms().get(i).getDaemon().getAttacco());
+     }
 }
 
+    public void salvaPartita(){
+        repository.salva(this);
+        cambiaStato();
+    }
 
-public void salvaPartita(){
-        Persistenza.memorizza(this, "partita.json");
-        this.cambiaStato();
-}
-
-
-private  void cambiaStato(){
-    Stato stato= new Stato();
-    Persistenza.recupera(stato,"statoPartita.json");
-    stato.setPartitaSalvata(this.getShadowhunters().isVivo());
-    Persistenza.memorizza(stato,"statoPartita.json" );
-}
+    private void cambiaStato(){
+        Stato stato = repository.caricaStato();
+        stato.setPartitaSalvata(this.getShadowhunters().isVivo());
+        repository.salvaStato(stato);
+    }
+    public void setRepository(IPersistenza repository) {
+        this.repository = repository;
+    }
 
 }
