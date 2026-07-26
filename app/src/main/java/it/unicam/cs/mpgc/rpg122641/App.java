@@ -29,6 +29,7 @@ public class App extends Application {
 
         game = loadGame();
         game.setRepository(new JsonPeristenza());
+        game.setCalcolatorePunteggio(new CalcolatorePunteggio());
         testi = loadTesti();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
         Scene scene = new Scene(loader.load(), 600, 700);

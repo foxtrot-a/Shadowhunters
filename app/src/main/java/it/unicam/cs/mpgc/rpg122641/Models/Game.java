@@ -1,20 +1,17 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IPersistenza;
-
+import it.unicam.cs.mpgc.rpg122641.Interfaces.ICalcolaPunteggio;
 import java.util.ArrayList;
-
 public class Game {
-
     private Shadowhunters shadowhunters;
     private ArrayList<Room> rooms;
     private transient IPersistenza repository;
-
+    private transient ICalcolaPunteggio calcolatorePunteggio;
 
     public Game(Shadowhunters shadowhunters, ArrayList<Room> rooms){
         this.rooms = rooms;
         this.shadowhunters = shadowhunters;
     }
-
     public Game(){
 
     }
@@ -27,76 +24,70 @@ public class Game {
     }
 
     // logica del gioco per combattimenti
-    public boolean mossa(int scenario, int scelta){
-        int danno = 0;
-        switch (scelta) {
-            case 1:// attacca
-                danno = this.calcolaDanno(this.getShadowhunters().getAttacco(), this.getRooms().get(scenario-1).getDaemon().getDifesa());
-                break;
-            case 2: //difendi
-                danno = this.calcolaDanno(this.getShadowhunters().getDifesa(), this.getRooms().get(scenario-1).getDaemon().getAttacco());
-                break;
-            case 3: //fuggi
-                danno = this.calcolaDanno(1,1);
-                break;
-        }
+    public boolean azioneUtente(int scenario, Azione azione){
+        int danno =  calcolatorePunteggio.calcolaEsito(new Combattimento(
+                                                             this.getRooms().get(scenario-1),
+                                                             this.shadowhunters,
+                                                             this.getRooms().get(scenario-1).getDaemon(),
+                                                             azione)); //todo da sostiutire azione
+
         if (scenario == 1){
-            return this.stanzaUno(scenario, scelta, danno);
+            return this.stanzaUno(scenario, azione, danno);
         }else{
-            this.setGioco(scenario, scelta, danno);
+            this.setGioco(scenario, azione, danno);
             return danno > 0;
         }
     }
 
     // metodo in comune nel metodo della mossa, poichè c'è una piccola variazione tra la stanza 1 e le altre,
     // quindi raggruppiamo qui i calcoli
-    private void setGioco(int scenario, int scelta, int danno){
+    private void setGioco(int scenario, Azione azione, int danno){
         Room room = rooms.get(scenario - 1);
         Daemon daemon = room.getDaemon();
        if (danno > 0) {
             // Il giocatore ha vinto
-            this.gestisciVittoria(daemon,room,scelta,danno);
+            this.gestisciVittoria(daemon,room,azione,danno);
         } else {
             // Il demone ha vinto
-            this.gestisciSconfitta(daemon,room,scelta,danno);
+            this.gestisciSconfitta(daemon,room,azione,danno);
 
         }
     }
 
-    private void gestisciVittoria(Daemon daemon, Room room, int scelta, int danno){
+    private void gestisciVittoria(Daemon daemon, Room room, Azione azione, int danno){
         daemon.setAttacco(0);
         daemon.setDifesa(0);
         room.setDone(true);
 
-        switch (scelta){
-            case 1: shadowhunters.setAttacco(shadowhunters.getAttacco() + danno + room.getObject().getScoreIncrements());
+        switch (azione){
+            case ATTACCA: shadowhunters.setAttacco(shadowhunters.getAttacco() + danno + room.getObject().getScoreIncrements());
                 break;
-            case 2: shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
+            case DIFENDI: shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
                 break;
         }
     }
 
-    private void gestisciSconfitta(Daemon daemon, Room room, int scelta, int danno){
-           System.out.println(scelta);
-        switch (scelta){
-            case 1:  daemon.setAttacco(daemon.getAttacco() + danno);
+    private void gestisciSconfitta(Daemon daemon, Room room, Azione azione, int danno){
+
+        switch (azione){
+            case ATTACCA:  daemon.setAttacco(daemon.getAttacco() + danno);
                     shadowhunters.setDifesa(shadowhunters.getDifesa() + danno);
                 break;
-            case 2:  daemon.setDifesa(daemon.getDifesa() + danno);
+            case DIFENDI:  daemon.setDifesa(daemon.getDifesa() + danno);
                     shadowhunters.setAttacco(shadowhunters.getAttacco() + danno);
                 break;
-            case 3:
-                shadowhunters.setAttacco(shadowhunters.getAttacco() -2);
-                shadowhunters.setDifesa(shadowhunters.getDifesa() -2 );
+            case FUGGI:
+                shadowhunters.setAttacco(shadowhunters.getAttacco() - danno);
+                shadowhunters.setDifesa(shadowhunters.getDifesa() - danno );
                 break;
         }
     }
-private boolean stanzaUno(int scenario, int scelta, int danno){
+private boolean stanzaUno(int scenario, Azione azione, int danno){
     //la stanza 1 deve avere un comportamento differente dalle altre, perhcè ha
     //un ulteriore requisito per ricevere l'oggetto, che in questo caso sarà l'Angelo
     if (this.getRooms().get(1).isDone() && this.getRooms().get(3).isDone()  && danno > 0){
         // significa che ci sono due strumenti mortali e ha superato il demone
-        this.setGioco( scenario, scelta, danno); // scenario superato e si può aggiungere Raziel come oggetto
+        this.setGioco( scenario, azione, danno); // scenario superato e si può aggiungere Raziel come oggetto
         return  true;
     } else if (danno > 0) {
         // il demone ritorna sempre, perchè la scena non è completa, perchè rchieste anche gli altri due strumenti
@@ -105,10 +96,6 @@ private boolean stanzaUno(int scenario, int scelta, int danno){
         return true;// ritorniamo true, perchè ha vinto, ma non ha superato il gioco
     }
 return  false;
-}
-
-private int calcolaDanno(int punteggio1, int punteggio2){
-        return punteggio1 - punteggio2;
 }
 
 
@@ -136,6 +123,10 @@ public void resetGioco(Game game){
     }
     public void setRepository(IPersistenza repository) {
         this.repository = repository;
+    }
+
+    public void setCalcolatorePunteggio(ICalcolaPunteggio calcolatorePunteggio) {
+        this.calcolatorePunteggio = calcolatorePunteggio;
     }
 
 }

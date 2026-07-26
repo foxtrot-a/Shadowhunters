@@ -1,7 +1,7 @@
 {
   "shadowhunters": {
     "attacco": 22,
-    "difesa": 8
+    "difesa": 27
   },
   "rooms": [
     {
@@ -24,15 +24,15 @@
       "name": "Ossa",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Spada",
         "immagePath": "spada.png",
         "scoreIncrements": 5
       },
-      "done": false
+      "done": true
     },
     {
       "id": 3,
@@ -54,15 +54,15 @@
       "name": "Istituto",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Coppa",
         "immagePath": "coppa.png",
         "scoreIncrements": 5
       },
-      "done": false
+      "done": true
     },
     {
       "id": 5,

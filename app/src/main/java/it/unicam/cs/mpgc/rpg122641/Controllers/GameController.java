@@ -2,6 +2,7 @@ package it.unicam.cs.mpgc.rpg122641.Controllers;
 
 import it.unicam.cs.mpgc.rpg122641.App;
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IController;
+import it.unicam.cs.mpgc.rpg122641.Models.Azione;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Room;
 import javafx.event.ActionEvent;
@@ -96,7 +97,8 @@ public class GameController implements IController {
             case 1:// attacca
             case 2: //difendi
             case 3: //fuggi
-                this.aggiornaEsito(this.game.mossa(this.scenario,scelta)); // uguale per tutti e tre
+
+                this.aggiornaEsito(this.game.azioneUtente(this.scenario,this.getAzione(scelta))); // uguale per tutti e tre
                 break;
             case 4:
                 this.back(event);
@@ -106,6 +108,20 @@ public class GameController implements IController {
                 break;
         }
     }
+
+    private Azione getAzione(int scelta) {
+        switch (scelta) {
+            case 1:
+                return Azione.ATTACCA;
+            case 2:
+                return Azione.DIFENDI;
+            case 3:
+                return Azione.FUGGI;
+            default:
+                throw new IllegalArgumentException("Azione non valida");
+        }
+    }
+
 
     private void setImmagineOggetti(Image image){
         for(ImageView img : immagini){
