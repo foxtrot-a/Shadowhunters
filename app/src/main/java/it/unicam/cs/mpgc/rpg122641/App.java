@@ -13,7 +13,7 @@ public class App extends Application {
     private Game game;
     private boolean partitaSalvata;
     private TestiPersistenza testi;
-    private GamePersistence gamePersistence;
+    private GestoreSalvataggioPartita gestoreSalvataggioPartita;
     private IPersistenza repository;
 
     public App() {
@@ -27,7 +27,7 @@ public class App extends Application {
     public TestiPersistenza getTesti() {
         return testi;
     }
-    public GamePersistence getGestore() { return gamePersistence ;}
+    public GestoreSalvataggioPartita getGestore() { return gestoreSalvataggioPartita;}
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -35,7 +35,7 @@ public class App extends Application {
         game = loadGame();
         game.setCalcolatorePunteggio(new CalcolatorePunteggio());
         testi = loadTesti();
-        gamePersistence = new GamePersistence(repository);
+        gestoreSalvataggioPartita = new GestoreSalvataggioPartita(repository);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
         Scene scene = new Scene(loader.load(), 600, 700);
 

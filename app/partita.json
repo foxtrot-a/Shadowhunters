@@ -1,7 +1,7 @@
 {
   "shadowhunters": {
     "attacco": 10,
-    "difesa": 8
+    "difesa": -382
   },
   "rooms": [
     {
@@ -84,7 +84,7 @@
       "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 400,
+        "attacco": 10,
         "difesa": 400
       },
       "object": {

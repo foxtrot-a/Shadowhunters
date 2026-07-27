@@ -1,5 +1,4 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
-
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IPersistenza;
 import it.unicam.cs.mpgc.rpg122641.Utils.JsonFileManager;
 
@@ -22,5 +21,4 @@ public class JsonPersistenza implements IPersistenza {
     public void salvaStato(Stato stato) {
         JsonFileManager.memorizza(stato, "statoPartita.json");
     }
-
 }
