@@ -123,7 +123,6 @@ public class GameController implements IController {
         }
     }
 
-
     private void setImmagineOggetti(Image image){
         for(ImageView img : immagini){
             if(img.getImage() == null){

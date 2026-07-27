@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg122641.Interfaces;
 import it.unicam.cs.mpgc.rpg122641.Models.Game;
 import it.unicam.cs.mpgc.rpg122641.Models.Stato;
+import it.unicam.cs.mpgc.rpg122641.Models.TestiPersistenza;
 
 public interface IPersistenza {
     void salvaDettagliPartita(Game game);
@@ -8,4 +9,5 @@ public interface IPersistenza {
     Stato caricaStato();
     void salvaStato(Stato stato);
     Game caricaTemplate();
+    TestiPersistenza caricaTesti();
 }

@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg122641;
 import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
+import it.unicam.cs.mpgc.rpg122641.Interfaces.IGestoreSalvataggioPartita;
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IPersistenza;
 import it.unicam.cs.mpgc.rpg122641.Models.*;
 import it.unicam.cs.mpgc.rpg122641.Utils.JsonFileManager;
@@ -13,7 +14,7 @@ public class App extends Application {
     private Game game;
     private boolean partitaSalvata;
     private TestiPersistenza testi;
-    private GestoreSalvataggioPartita gestoreSalvataggioPartita;
+    private IGestoreSalvataggioPartita gestoreSalvataggioPartita;
     private IPersistenza repository;
 
     public App() {
@@ -27,7 +28,7 @@ public class App extends Application {
     public TestiPersistenza getTesti() {
         return testi;
     }
-    public GestoreSalvataggioPartita getGestore() { return gestoreSalvataggioPartita;}
+    public IGestoreSalvataggioPartita getGestore() { return gestoreSalvataggioPartita;}
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -57,7 +58,7 @@ public class App extends Application {
         return repository.caricaTemplate();
     }
     private TestiPersistenza loadTesti(){
-        return (TestiPersistenza) JsonFileManager.recupera(new TestiPersistenza(), "testi.json");
+        return  repository.caricaTesti();
     }
     public static void main(String[] args) {
         launch(args);

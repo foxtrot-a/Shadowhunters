@@ -1,7 +1,7 @@
 {
   "shadowhunters": {
-    "attacco": 10,
-    "difesa": -382
+    "attacco": 22,
+    "difesa": 8
   },
   "rooms": [
     {
@@ -39,15 +39,15 @@
       "name": "Città di Diamante",
       "daemon": {
         "demoneSuperiore": false,
-        "attacco": 5,
-        "difesa": 3
+        "attacco": 0,
+        "difesa": 0
       },
       "object": {
         "name": "Stilo",
         "immagePath": "stilo.png",
         "scoreIncrements": 5
       },
-      "done": false
+      "done": true
     },
     {
       "id": 4,
@@ -84,7 +84,7 @@
       "name": "Casa1",
       "daemon": {
         "demoneSuperiore": true,
-        "attacco": 10,
+        "attacco": 400,
         "difesa": 400
       },
       "object": {

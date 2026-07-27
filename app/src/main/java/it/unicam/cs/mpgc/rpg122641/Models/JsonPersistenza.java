@@ -21,4 +21,6 @@ public class JsonPersistenza implements IPersistenza {
     public void salvaStato(Stato stato) {
         JsonFileManager.memorizza(stato, "statoPartita.json");
     }
+    @Override
+    public TestiPersistenza caricaTesti() {  return (TestiPersistenza) JsonFileManager.recupera(new TestiPersistenza(), "testi.json");}
 }

@@ -7,9 +7,9 @@ public class CalcolatorePunteggio implements ICalcolaPunteggio {
     public int calcolaEsito(Combattimento combattimento) {
         switch (combattimento.getAzione()) {
             case ATTACCA:
-                return combattimento.getShadowhunters().getAttacco() - combattimento.getDaemon().getDifesa();
+            return combattimento.getShadowhunters().getAttacco() - combattimento.getDaemon().getDifesa();
             case DIFENDI:
-                return combattimento.getDaemon().getDifesa() - combattimento.getShadowhunters().getAttacco();
+                return combattimento.getShadowhunters().getDifesa() -  combattimento.getDaemon().getAttacco();
             case FUGGI:
                 return PENALITA_FUGA;
             default:

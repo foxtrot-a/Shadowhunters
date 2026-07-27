@@ -32,7 +32,7 @@ public class Game {
                                                              this.shadowhunters,
                                                              this.getRooms().get(scenario-1).getDaemon(),
                                                              azione));
-        if (scenario == 1){
+       if (scenario == 1){
             return this.stanzaUno(scenario, azione, danno);
         }else{
             this.setGioco(scenario, azione, danno);
@@ -97,8 +97,6 @@ private boolean stanzaUno(int scenario, Azione azione, int danno){
     }
     return  false;
     }
-
-
     public void resetGioco(Game template){
         shadowhunters.setAttacco(template.getShadowhunters().getAttacco());
         shadowhunters.setDifesa(template.getShadowhunters().getDifesa());
