@@ -42,8 +42,7 @@ public class GuideController implements IController {
 
             stage.setOnCloseRequest(e -> {
                 App.getInstance().getGestore().salvaPartita(game);
-                //game.salvaPartita();
-            });
+               });
 
 
             stage.show();

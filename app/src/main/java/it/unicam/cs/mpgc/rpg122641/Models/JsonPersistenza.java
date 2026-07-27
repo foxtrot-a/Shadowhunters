@@ -1,29 +1,26 @@
 package it.unicam.cs.mpgc.rpg122641.Models;
 
 import it.unicam.cs.mpgc.rpg122641.Interfaces.IPersistenza;
-import it.unicam.cs.mpgc.rpg122641.Utils.Persistenza;
+import it.unicam.cs.mpgc.rpg122641.Utils.JsonFileManager;
 
 public class JsonPersistenza implements IPersistenza {
-
 @Override
-    public void salva(Game game) {
-        Persistenza.memorizza(game, "partita.json");
-    }
+    public void salvaDettagliPartita(Game game) { JsonFileManager.memorizza(game, "partita.json"); }
     @Override
-    public Game carica() {
-        return (Game) Persistenza.recupera(new Game(), "partita.json");
+    public Game caricaPartitaSalvata() {
+        return (Game) JsonFileManager.recupera(new Game(), "partita.json");
     }
     @Override
     public Game caricaTemplate() {
-        return (Game) Persistenza.recupera(new Game(), "gioco.json");
+        return (Game) JsonFileManager.recupera(new Game(), "gioco.json");
     }
     @Override
     public Stato caricaStato() {
-        return (Stato) Persistenza.recupera(new Stato(), "statoPartita.json");
+        return (Stato) JsonFileManager.recupera(new Stato(), "statoPartita.json");
     }
     @Override
     public void salvaStato(Stato stato) {
-        Persistenza.memorizza(stato, "statoPartita.json");
+        JsonFileManager.memorizza(stato, "statoPartita.json");
     }
 
 }

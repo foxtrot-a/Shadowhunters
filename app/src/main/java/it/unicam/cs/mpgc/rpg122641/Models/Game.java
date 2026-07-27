@@ -14,6 +14,9 @@ public class Game {
     public Game(){
 
     }
+    public void setCalcolatorePunteggio(ICalcolaPunteggio calcolatorePunteggio) {
+        this.calcolatorePunteggio = calcolatorePunteggio;
+    }
     public Shadowhunters getShadowhunters() {
         return shadowhunters;
     }
@@ -29,7 +32,6 @@ public class Game {
                                                              this.shadowhunters,
                                                              this.getRooms().get(scenario-1).getDaemon(),
                                                              azione));
-
         if (scenario == 1){
             return this.stanzaUno(scenario, azione, danno);
         }else{
@@ -49,7 +51,6 @@ public class Game {
         } else {
             // Il demone ha vinto
             this.gestisciSconfitta(daemon,room,azione,danno);
-
         }
     }
 
@@ -94,23 +95,19 @@ private boolean stanzaUno(int scenario, Azione azione, int danno){
         this.getRooms().get(scenario - 1).getDaemon().setDifesa(this.getRooms().get(scenario - 1).getDaemon().getDifesa() + 5);
         return true;// ritorniamo true, perchè ha vinto, ma non ha superato il gioco
     }
-return  false;
-}
+    return  false;
+    }
 
 
-public void resetGioco(Game template){
-//    Game template = repository.caricaTemplate();
-    shadowhunters.setAttacco(template.getShadowhunters().getAttacco());
-    shadowhunters.setDifesa(template.getShadowhunters().getDifesa());
+    public void resetGioco(Game template){
+        shadowhunters.setAttacco(template.getShadowhunters().getAttacco());
+        shadowhunters.setDifesa(template.getShadowhunters().getDifesa());
 
-    for (int i = 0; i < rooms.size(); i++){
-     rooms.get(i).setDone(false);
-     rooms.get(i).getDaemon().setDifesa(template.getRooms().get(i).getDaemon().getDifesa());
-     rooms.get(i).getDaemon().setAttacco(template.getRooms().get(i).getDaemon().getAttacco());
-     }
-}
-    public void setCalcolatorePunteggio(ICalcolaPunteggio calcolatorePunteggio) {
-        this.calcolatorePunteggio = calcolatorePunteggio;
+        for (int i = 0; i < rooms.size(); i++){
+         rooms.get(i).setDone(false);
+         rooms.get(i).getDaemon().setDifesa(template.getRooms().get(i).getDaemon().getDifesa());
+         rooms.get(i).getDaemon().setAttacco(template.getRooms().get(i).getDaemon().getAttacco());
+         }
     }
 
 

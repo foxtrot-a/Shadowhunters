@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Persistenza {
+public class JsonFileManager {
    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 public static Object recupera(Object obj, String path){
     try (FileReader reader = new FileReader(path)) {
@@ -15,7 +15,6 @@ public static Object recupera(Object obj, String path){
     }
    return null;
     }
-
     public static void memorizza(Object obj, String nomeFile){
         try (FileWriter writer = new FileWriter(nomeFile)) {
             // Converte l'oggetto in JSON e lo salva nel file

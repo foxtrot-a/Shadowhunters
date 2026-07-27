@@ -1,7 +1,8 @@
 package it.unicam.cs.mpgc.rpg122641;
 import it.unicam.cs.mpgc.rpg122641.Controllers.StartController;
+import it.unicam.cs.mpgc.rpg122641.Interfaces.IPersistenza;
 import it.unicam.cs.mpgc.rpg122641.Models.*;
-import it.unicam.cs.mpgc.rpg122641.Utils.Persistenza;
+import it.unicam.cs.mpgc.rpg122641.Utils.JsonFileManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,7 +13,8 @@ public class App extends Application {
     private Game game;
     private boolean partitaSalvata;
     private TestiPersistenza testi;
-    private GameGestore gameGestore;
+    private GamePersistence gamePersistence;
+    private IPersistenza repository;
 
     public App() {
         instance = this;
@@ -25,14 +27,15 @@ public class App extends Application {
     public TestiPersistenza getTesti() {
         return testi;
     }
-    public GameGestore getGestore() { return gameGestore ;}
+    public GamePersistence getGestore() { return gamePersistence ;}
     @Override
     public void start(Stage stage) throws Exception {
 
+        repository = new JsonPersistenza();
         game = loadGame();
         game.setCalcolatorePunteggio(new CalcolatorePunteggio());
         testi = loadTesti();
-        gameGestore = new GameGestore(new JsonPersistenza());
+        gamePersistence = new GamePersistence(repository);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/main-view.fxml"));
         Scene scene = new Scene(loader.load(), 600, 700);
 
@@ -46,22 +49,16 @@ public class App extends Application {
     }
 
     private Game loadGame() {
-
-        Stato stato = (Stato) Persistenza.recupera(new Stato(), "statoPartita.json");
-
+        Stato stato = repository.caricaStato();
         partitaSalvata = stato.isPartitaSalvata();
-
         if (partitaSalvata) {
-            return (Game) Persistenza.recupera(new Game(), "partita.json");
+             return repository.caricaPartitaSalvata();
         }
-
-        return (Game) Persistenza.recupera(new Game(), "gioco.json");
+        return repository.caricaTemplate();
     }
-
     private TestiPersistenza loadTesti(){
-        return (TestiPersistenza) Persistenza.recupera(new TestiPersistenza(), "testi.json");
+        return (TestiPersistenza) JsonFileManager.recupera(new TestiPersistenza(), "testi.json");
     }
-
     public static void main(String[] args) {
         launch(args);
     }
